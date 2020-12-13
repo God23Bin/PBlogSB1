@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/admin/plugins/bootstrap/css/bootstrap.css}" href="plugins/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/admin/css/main_admin.css}" href="css/main_admin.css"/>
+		
+	</head>
+	<body>
+		<div class="simple-bg">
+			<div class="container-fluid container-small">
+				<h1>
+					你来啦！
+				</h1>
+				<form action="#" method="post">
+					<div class="form-group">
+						<label for="pn">手机</label>
+						<input type="text" class="form-control" id="pn" name="phonenumber">
+					</div>
+					<div class="form-group">
+						<label for="pw">密码</label>
+						<input type="password" class="form-control" id="pw" name="password">
+					</div>
+					<!-- <div id="error-login">手机号或密码输入错误</div> -->
+					<!-- <div id="error-login">手机号或密码不能为空啊</div> -->
+					<div id="error-login"></div>
+					
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block" onclick="checkUser()">登录</button>
+					</div>
+					
+					<div class="form-group">
+						<a href="#">忘记密码？</a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script th:src="@{/js/jquery-3.4.1.js}" src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

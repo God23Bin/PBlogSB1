@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>God23Bin的图床</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/pu-bu-liu/masonry-demo.css}" href="css/pu-bu-liu/masonry-demo.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/normalize.css}" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+	</head>
+	<body>
+		<div class="container-fluid bg-content">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li class="active">
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="control/personal_center.html"></a></li>
+							<li><a href="php/logout.html">注销</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+		</div>
+
+		<div class="container container-pubuliu">
+			<div class="col-sm-2">
+				<div class="content content--side">
+					<div class="control control--grids control--effects">
+						<span class="control__title"></span>
+						<div class="control__item">
+							<input class="control__radio" type="radio" name="grid-type" value="grid--type-a" id="control-grid-a" checked>
+							
+							<label class="control__label" for="control-grid-a">游戏图库</label>
+						</div>
+						<div class="control__item">
+							<input class="control__radio" type="radio" name="grid-type" value="grid--type-b" id="control-grid-b">
+							<label class="control__label" for="control-grid-b">电影图库</label>
+						</div>
+						<div class="control__item">
+							<input class="control__radio" type="radio" name="grid-type" value="grid--type-c" id="control-grid-c">
+							<label class="control__label" for="control-grid-c">我的图床</label>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="content content--center">
+					<div class="grid grid--type-a">
+						<div class="grid__sizer"></div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set1/Ciri_3.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-1.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-10.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-4.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-5.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-6.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-7.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-8.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-9.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/best-10.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/blog-1.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/blog-2.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/blog-4.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/blog-3.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/editor-2.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/zone/editor-1.jpg" alt="Some image" /></a>
+						</div>
+					</div>
+					<div class="grid grid--type-b">
+						<div class="grid__sizer"></div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m1.jpeg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m1_pic02.png" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m2.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m2_pic01.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m2_pic03.jpg" alt="Some image" /></a>
+						</div>
+						
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m1_pic01.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m2_pic02.gif" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m3.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m3_pic01.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m3_pic02.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m3_pic03.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m3_pic03.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m3_pic05.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m4.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m4_pic01.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m4_pic02.png" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m4_pic03.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m5.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m5_pic01.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m5_pic02.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m6.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m5_pic03.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m5_pic04.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set2/m5_pic05.jpg" alt="Some image" /></a>
+						</div>
+					</div>
+					<div class="grid grid--type-c">
+						<div class="grid__sizer"></div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/1.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/2.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/3.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/4.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/5.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/6.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/10.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/11.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/7.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/8.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/9.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/2.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/4.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/6.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/8.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/10.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/1.jpg" alt="Some image" /></a>
+						</div>
+						<div class="grid__item">
+							<a class="grid__link" href="#"><img class="grid__img" src="img/set3/2.jpg" alt="Some image" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="content content--side content--right">
+					<div class="control control--effects">
+						<span class="control__title">动画效果</span>
+						<button class="control__btn" data-fx="Amun">Amun</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+
+		<div class="footer">
+			CopyRight©2020-2035 All Right Reserved God23Bin个人博客版权所有 粤ICP备19002352号-1 粤网文（2016）1650-207号 粤公网安备 19991109006753号
+		</div>
+
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mansory/imagesloaded.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mansory/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mansory/anime.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mansory/main-of-mansory.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

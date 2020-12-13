@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>可能否</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/audioplayer_1.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/zone.css}" href="css/zone.css" />
+	</head>
+	<body class="bg-content">
+		<div class="container-fluid">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu active">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="control/personal_center.html"></a></li>
+							<li><a href="php/logout.html">注销</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+		</div>
+		
+		<div class="container music-container">
+			<h1 id="music-top"></h1>
+			<div id="music-body" class="clearfix">
+				<div class="title-song">
+					<img src="http://p1.music.126.net/jqf5gchnoWkL-CaUzRx3OA==/109951165043049458.jpg?param=280y280" >
+					<h2>可能否</h2>
+					<p> 我能想到最浪漫的事就是和你一起慢慢变老
+
+						美好的事是你突如其来给我一个拥抱
+
+						是人潮拥挤你自然而然牵紧我的手～
+
+						故事很长，我长话短说，"喜欢你，很久了。</p>
+				</div>
+				<div id="ap1" class="audioplayer-tobe alternate-layout is-preview button-aspect-noir button-aspect-noir--filled"
+				 data-type="normal" data-source="music/木小雅 - 可能否.mp3" data-sourceogg="sounds/itsabeautifulday.ogg">
+					<!--  data-sourceogg="sounds/adg3.ogg"  -->
+					<div class="meta-artist">
+						<span class="the-artist"><strong>木小雅</strong></span>
+						<span class="the-name"><a href="#">可能否</a></span>
+					</div>
+				</div>
+				
+			</div>
+		</div>	
+		
+		
+
+
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/music/audioplayer_1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/music/music.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>

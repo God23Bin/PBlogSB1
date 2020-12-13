@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>游戏专区</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/zone.css}" href="css/zone.css" />
+	</head>
+	<body class="bg-content">
+		<div class="container-fluid">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown active" >
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="control/personal_center.html"></a></li>
+							<li><a href="php/logout.html">注销</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+		</div>
+		
+		<div class="container slider">
+			<div class="carousel slide" id="slidershow" data-ride="carousel" data-interval="3000">
+				<!--计数器-->
+				<ol class="carousel-indicators">
+					<li class="active" data-target="#slidershow" data-slide-to="0"></li>
+					<li data-target="#slidershow" data-slide-to="1"></li>
+					<li data-target="#slidershow" data-slide-to="2"></li>
+					<li data-target="#slidershow" data-slide-to="3"></li>
+					<li data-target="#slidershow" data-slide-to="4"></li>
+				</ol>
+				<!--图片容器-->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="img/zone/slide-7.jpg" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4>Need for Speed™ Heat</h4>
+							<span>这就是你要的速度！</span>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/zone/slide-2.jpg" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4>侠盗猎车手5</h4>
+							<span>快来加入我们的Online吧！</span>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/zone/slide-3.jpg" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4>蝙蝠侠：阿卡姆</h4>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/zone/slide-8.jpg" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4>使命召唤16</h4>
+							<span>熟知的普莱斯又叼着雪茄回来了</span>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/zone/slide-6.jpg" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4>最后生还者2</h4>
+						</div>
+					</div>
+					<!--轮播导航-->
+					<a href="#slidershow" data-slide="prev" class="left carousel-control" role="button">
+						<img src="img/zone/left.png" />
+					</a>
+					<a href="#slidershow" data-slide="next" class="right carousel-control" role="button">
+						<img src="img/zone/right.png" />
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container content-of-game">
+			<div class="title-of-list">
+				<h3>我的单机游戏排行榜</h3>
+			</div>
+			<!-- 左边排行开始 -->
+			<div class="col-sm-4">
+				<div class="phtop">
+					2020新游排行
+				</div>
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default ">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+								 aria-expanded="false" aria-controls="collapseOne">
+									骑马与砍杀2
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180723/1532333197_237093.jpg">
+									<div class="box1">
+										<h4>骑马与砍杀2</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-03-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTwo">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+								 aria-expanded="false" aria-controls="collapseTwo">
+									腐烂国度2
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20200309/1583736015_670581.jpg">
+									<div class="box1">
+										<h4>腐烂国度2</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-03-09</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+								 aria-expanded="false" aria-controls="collapseThree">
+									生化危机3：重制版
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20191204/1575426744_339777.jpg">
+									<div class="box1">
+										<h4>生化危机3：重制版</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-3-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingFour">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
+								 aria-expanded="false" aria-controls="collapseFour">
+									骑马与砍杀2
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180723/1532333197_237093.jpg">
+									<div class="box1">
+										<h4>骑马与砍杀2</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-3-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingFive">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive"
+								 aria-expanded="false" aria-controls="collapseFive">
+									骑马与砍杀2
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180723/1532333197_237093.jpg">
+									<div class="box1">
+										<h4>骑马与砍杀2</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-3-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 左边排行结束 -->
+			<!-- 中间排行开始 -->
+			<div class="col-sm-4">
+				<div class="phtop">
+					总单机游戏前五排行
+				</div>
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingSix">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix"
+								 aria-expanded="false" aria-controls="collapseSix">
+									侠盗猎车手5
+								</a>
+								<small>热度：35608800</small>
+							</h4>
+						</div>
+						<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<a href="gameof.html" target="_blank" ><img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180728/1532770547_615081.jpg"></a>
+									<div class="box1">
+										<h4>侠盗猎车手5</h4>
+										<p>热度：35608800</p>
+										<p>发售时间：</p>
+										<p>2013-05-09</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingServen">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseServen"
+								 aria-expanded="false" aria-controls="collapseServen">
+									上古卷轴5：天际
+								</a>
+								<small>热度：18371033</small>
+							</h4>
+						</div>
+						<div id="collapseServen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingServen">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180529/1527578329_606706.jpg">
+									<div class="box1">
+										<h4>上古卷轴5：天际</h4>
+										<p>热度：18371033</p>
+										<p>发售时间：</p>
+										<p>2020-03-09</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingEight">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight"
+								 aria-expanded="false" aria-controls="collapseEight">
+									巫师3：狂猎
+								</a>
+								<small>热度：6881284</small>
+							</h4>
+						</div>
+						<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180728/1532770815_753424.jpg">
+									<div class="box1">
+										<h4>巫师3：狂猎</h4>
+										<p>热度：6881284</p>
+										<p>发售时间：</p>
+										<p>2016-10-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingNight">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNight"
+								 aria-expanded="false" aria-controls="collapseNight">
+									看门狗2
+								</a>
+								<small>热度：5521476</small>
+							</h4>
+						</div>
+						<div id="collapseNight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNight">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180724/1532400033_147508.jpg">
+									<div class="box1">
+										<h4>看门狗2</h4>
+										<p>热度：5521476</p>
+										<p>发售时间：</p>
+										<p>2016-11-28</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTen">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen"
+								 aria-expanded="false" aria-controls="collapseTen">
+									骑马与砍杀2
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180723/1532333197_237093.jpg">
+									<div class="box1">
+										<h4>骑马与砍杀2</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-3-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 中间排行结束 -->
+			<!-- 右边排行开始 -->
+			<div class="col-sm-4">
+				<div class="phtop">
+					2020期待新游前五排行
+				</div>
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTenone">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTenone"
+								 aria-expanded="false" aria-controls="collapseTenone">
+									侠盗猎车手6
+								</a>
+								<small>热度：1196547</small>
+							</h4>
+						</div>
+						<div id="collapseTenone" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTenone">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180711/1531275301_368382.jpg">
+									<div class="box1">
+										<h4>侠盗猎车手6</h4>
+										<p>热度：1196547</p>
+										<p>发售时间：</p>
+										<p>未知</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTentwo">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTentwo"
+								 aria-expanded="false" aria-controls="collapseTentwo">
+									赛博朋克2077
+								</a>
+								<small>热度：881916</small>
+							</h4>
+						</div>
+						<div id="collapseTentwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTentwo">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20190610/1560151349_388893.jpg">
+									<div class="box1">
+										<h4>腐烂国度2</h4>
+										<p>热度：881916</p>
+										<p>发售时间：</p>
+										<p>未知</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTenthree">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTenthree"
+								 aria-expanded="false" aria-controls="collapseTenthree">
+									生化危机3：重制版
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseTenthree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTenthree">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20191204/1575426744_339777.jpg">
+									<div class="box1">
+										<h4>生化危机3：重制版</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-3-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTenfour">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTenfour"
+								 aria-expanded="false" aria-controls="collapseTenfour">
+									骑马与砍杀2
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseTenfour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTenfour">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180723/1532333197_237093.jpg">
+									<div class="box1">
+										<h4>骑马与砍杀2</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-3-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTenfive">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTenfive"
+								 aria-expanded="false" aria-controls="collapseTenfive">
+									骑马与砍杀2
+								</a>
+								<small>热度：123456</small>
+							</h4>
+						</div>
+						<div id="collapseTenfive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTenfive">
+							<div class="panel-body">
+								<div class="col-sm-12 game-img-in-list">
+									<img src="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180723/1532333197_237093.jpg">
+									<div class="box1">
+										<h4>骑马与砍杀2</h4>
+										<p>热度：123456</p>
+										<p>发售时间：</p>
+										<p>2020-3-30</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 右边排行结束 -->
+		</div>
+				
+		<!-- 水平手风琴开始 -->
+		<div class="container box2 bg-content">
+			<div class="title-of-something">
+				<h3>近期喜爱的游戏画廊</h3>
+			</div>
+			<ul>
+				<li class="first-on">
+					<div class="main-img">
+						<img src="img/zone/nba2k-1.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/nba2k-2.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/nba2k-3.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/nba2k-4.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/nba2k-5.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/nba2k-6.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/nba2k-7.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+			</ul>
+			<ul>
+				<li class="first-on">
+					<div class="main-img">
+						<img src="img/zone/rdr2-1.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/rdr2-2.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/rdr2-3.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/rdr2-4.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/rdr2-5.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/rdr2-6.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="main-img">
+						<img src="img/zone/rdr2-7.jpg" width="580" height="320" alt="">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 水平手风琴结束 -->
+		
+		<div class="footer">
+			CopyRight©2020-2035 All Right Reserved God23Bin个人博客版权所有 粤ICP备19002352号-1 粤网文（2016）1650-207号 粤公网安备 19991109006753号
+		</div>
+
+
+		<script th:src="@{/js/jquery-3.4.1.js}" src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/umbrella.js}" src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/mouseclick.js}" src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/main.js}" src="js/main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>

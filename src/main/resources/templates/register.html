@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+		
+	</head>
+	<body>
+		<div class="container-fluid bg-content">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+			
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li class="active"><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+							  <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+						
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+		</div>
+		<div class="simple-bg">
+			<div class="container container-small">
+				<h1>
+					注册
+					<small>已有账号？<a href="login.html">那就登录啦</a></small>
+				</h1>
+				<form id="register" th:action="@{/userRegister}" th:method="post" action="phpAction/register.html" method="post">
+					<div class="form-group">
+						<label for="pn">手机号</label>
+						<input type="text" class="form-control" id="pn"
+							   data-rule='pattern:"^[0-9]*$"|maxlength:11|minlength:11'
+							   name="phoneNumber">
+						<div id="phonenumber-input-error" class="input-error">请输入11位手机号码</div>
+					</div>
+					<div class="form-group">
+						<label for="un">用户名</label>
+						<input type="text" class="form-control" id="un"
+							   data-rule='maxlength:36|minlength:4'
+							   name="username">
+						<div id="username-input-error" class="input-error">用户名长度至少4位</div>
+					</div>
+					<div class="form-group">
+						<label for="pw">密码</label>
+						<input type="password" class="form-control" id="pw"
+							   data-rule='pattern:"^[A-Za-z0-9]*$"|maxlength:64|minlength:6'
+							   name="password">
+						<div id="password-input-error" class="input-error">密码格式有误</div>
+					</div>
+					<div class="form-group">
+						<label for="confirmpasswd">确认密码</label>
+						<input type="password" class="form-control" id="confirmpasswd" name="confirmpasswd">
+						<div id="confirmpassword-input-error" class="input-error">与上面密码输入不一致</div>
+					</div>
+					<div class="form-group">
+						<label for="email">邮箱</label>
+						<input type="text" class="form-control" id="email"
+							   data-rule='pattern:"^[A-Za-z0-9]+@[A-Za-z0-9]+.[a-z]+$"'
+							   name="email">
+						<div id="email-input-error" class="input-error">请输入正确的邮箱格式</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block">注册</button>
+					</div>
+					
+					<div class="form-group">
+						<a href="#">忘记密码？</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="footer">
+			CopyRight©2020-2035  All Right Reserved God23Bin个人博客版权所有 粤ICP备19002352号-1 粤网文（2016）1650-207号 粤公网安备 19991109006753号
+		</div>
+
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/yanzheng/validator.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/yanzheng/input.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/yanzheng/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>

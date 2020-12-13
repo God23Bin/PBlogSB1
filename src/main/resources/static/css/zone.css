@@ -1,0 +1,209 @@
+/* --------------------------开始编写游戏专区的样式------------------------- */
+
+
+.bg-content {
+	background-color: #282725;
+}
+
+.slider {
+	margin-top: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.carousel-caption{
+	font-size: 25px;
+	background-color: rgba(0,0,0,0.5);
+	height: 250px;
+	margin-bottom: 200px;
+}
+.carousel-caption h4{
+	font-size: 70px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.left.carousel-control img,
+.right.carousel-control img{
+	margin-top: 300px;
+}
+
+/* 开始编写游戏排行的样式 */
+.game-img-in-list img{
+	max-width: 50%;
+}
+
+.title-of-list h3{
+	text-align: center;
+	font-weight: bold;
+	color: orange;
+	padding-bottom: 15px;
+	border-bottom: 2px solid white;
+}
+
+.phtop{
+	color: #dc1230;
+	background-color: #1b1917;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 15px 15px 0 0;
+	max-width: 100%;
+}
+
+/* 游戏列表中展开的详情 */
+.box1{
+	width: 100px;
+	float: right;
+	
+}
+/* 结束游戏排行的样式 */
+
+/* 开始编写水平手风琴 */
+.box2{
+	width: 1250px;
+	/* height: 325px; */
+	
+	margin: 20px auto;
+	padding-top: 5px;
+	padding-bottom: 30px;
+	box-shadow: 0 0 50px #000000;
+}
+
+.title-of-something h3{
+	color: #ff5500;
+	margin: 20px;
+	font-weight: bold;
+}
+
+.box2 ul{
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.box2 ul li{
+	/* width: 580px; */
+	width: 96px;
+	/* border: 5px solid black; */
+	overflow: hidden;
+	display: block;
+	float: left;
+}
+
+.box2 ul li.first-on{
+	width: 580px;
+}
+/* 结束编写水平手风琴 */
+
+/*游戏下载页样式*/
+.container.download-box{
+	margin-top: 150px;
+	margin-bottom: 0;
+	padding: 0 0;
+}
+
+
+
+/* --------------------------开始编写音乐、电影专区的样式------------------------- */
+.container.music-container,
+.container.movie-container{
+	margin-top: 80px;
+}
+
+#music-top,
+#movie-top{
+	color: white;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #ff5500;
+}
+
+#music-body,
+#movie-body{
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 75px #000000;
+	margin-bottom: 25px;
+	padding-bottom: 50px;
+}
+
+.music-list
+.movie-list{
+	margin-top: 20px;
+}
+
+.music-list li,
+.movie-list li{
+	list-style-type: none;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+.music-list .cover:hover,
+.movie-list .cover:hover{
+	opacity: 0.5;
+}
+
+.music-list .cover.col-sm-3{
+	width: 142px;
+	height: 200px;
+	margin-top: 10px;
+	margin-right: 60px;
+	margin-left: 60px;
+	padding-top: 14px;
+	box-shadow: 0 0 15px #000000;
+}
+
+.movie-list .cover.col-sm-3{
+	width: 142px;
+	height: 250px;
+	margin-top: 10px;
+	margin-right: 60px;
+	margin-left: 60px;
+	padding-top: 14px;
+	box-shadow: 0 0 15px #000000;
+}
+
+
+.music-list .cover.col-sm-3 img,
+.movie-list .cover.col-sm-3 img{
+	max-width: 100%;
+}
+
+.list-title,
+.title-song{
+	margin: 20px;
+}
+
+.list-title img{
+	margin: 20px;
+	float: left;
+	border-radius: 10px;
+	box-shadow: 0 0 20px #000000;
+}
+
+.list-title h2,
+.title-song h2{
+	padding-top: 30px;
+}
+
+.list-title p,
+.title-song p{
+	color: #888;
+	margin-top: 30px;
+}
+
+.title-song img{
+	margin: 20px;
+	float: left;
+	border-radius: 50%;
+	box-shadow: 0 0 20px #000000;
+}
+
+
+
+.table.music-table tr:hover{
+	background-color: #dff0d8;
+}
+

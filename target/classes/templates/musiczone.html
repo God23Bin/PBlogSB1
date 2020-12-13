@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>音乐专区</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/zone.css}" href="css/zone.css" />
+	</head>
+	<body class="bg-content">
+		<div class="container-fluid">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="control/personal_center.html"></a></li>
+							<li><a href="php/logout.html">注销</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+		</div>
+		
+		<div class="container music-container">
+			<h1 id="music-top">音乐专区之歌单</h1>
+			<div id="music-body" class="clearfix">
+				<div class="btn btn-danger">全部</div>
+					<ul class="music-list">
+						<li>
+							<div class="cover col-sm-3" >
+								
+								<a href="musicof.html"><img src="http://p1.music.126.net/jqf5gchnoWkL-CaUzRx3OA==/109951165043049458.jpg?param=140y140" ></a>
+								<h5>星星落在糖罐里，而你藏在我心里</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://p2.music.126.net/w-3tt7jcXOH7QFQ-g4UAvw==/109951165081281852.jpg?param=140y140" ></a>
+								<h5>『睡前治愈系列』灵魂逐渐融入浩瀚星辰中</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://p2.music.126.net/fHx7obV9bjipvSpqlf4B7g==/109951164856361756.jpg?param=140y140" ></a>
+								<h5>『学霸模式』让音乐来陪伴一天的学习</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://p2.music.126.net/DXsYusL40OoLpOAzRdCWZw==/109951164812692006.jpg?param=140y140" ></a>
+								<h5>伤感（片段）☹︎</h5>
+							</div>
+							
+						</li>
+						<li>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://p2.music.126.net/ltjsOxHf3EioU9mJbk-JcQ==/109951164719822526.jpg?param=140y140" ></a>
+								<h5>民谣小调｜纵享休闲时刻的惬意</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://p2.music.126.net/ZCDK9eDGx_x-Z6TLWQSGCg==/109951165007351125.jpg?param=140y140" ></a>
+								<h5>明明只是删了你 却空了整个列表 丢了你</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://p2.music.126.net/HUu4bfqMXmNpKO02Y8tf-A==/109951165100244498.jpg?param=140y140" ></a>
+								<h5>【实时更新】2020年最热门的50首歌曲</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://p2.music.126.net/42ux_iOst7Ty8wdaWvW6ZQ==/109951165081384599.jpg?param=140y140" ></a>
+								<h5>诗情画意总是在我们平淡的日子里，直到老去</h5>
+							</div>
+							
+						</li>
+						
+						
+					</ul>
+				
+			</div>
+		</div>	
+		
+		<div class="footer">
+			CopyRight©2020-2035 All Right Reserved God23Bin个人博客版权所有 粤ICP备19002352号-1 粤网文（2016）1650-207号 粤公网安备 19991109006753号
+		</div>
+
+
+		<script th:src="@{/js/jquery-3.4.1.js}" src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/umbrella.js}" src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/mouseclick.js}" src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/main.js}" src="js/main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>Xshell连接阿里云服务器</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+
+	</head>
+	<body>
+		<div class="container-fluid bg-content">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="control/personal_center.html"></a></li>
+							<li><a href="php/logout.html">注销</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+
+			<div class="jumbotron jumbotron-bg">
+				<div class="container">
+					<h1>Xshell连接阿里云服务器</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum aspernatur iure harum aperiam corporis nihil
+						cumque minima consectetur corrupti vero consequatur officia fugit iste quasi quisquam alias inventore tempore
+						nisi.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid bg-content">
+			<div class="container">
+				<div class="col-sm-8">
+					<div class="article-title">
+						Xshell连接阿里云服务器
+					</div>
+					<div class="article-content">
+						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quae ullam fuga ea veritatis nulla
+							maxime voluptatibus eaque ab? Debitis tempora magni cumque blanditiis in maxime laborum iusto reprehenderit
+							nihil.</div>
+						<div>Unde qui neque necessitatibus magni eligendi ducimus esse optio facere sit ullam error expedita nisi earum
+							quae quam placeat quia soluta. Sed qui ratione laboriosam voluptas assumenda architecto distinctio iusto.</div>
+						<div>Ea illum incidunt sunt perspiciatis officiis fugit eveniet eum assumenda recusandae maiores neque molestiae
+							fugiat fuga. Dolorum impedit in beatae aut nemo aliquid illum voluptates enim quae maiores nostrum magnam!</div>
+						<div>Perspiciatis error maiores assumenda reprehenderit expedita dignissimos impedit ipsa alias iste quidem
+							consequatur ab eos praesentium asperiores a est quos consectetur culpa ratione autem fuga delectus velit
+							doloribus pariatur iusto.</div>
+						<div>Nulla libero deserunt itaque et commodi ipsum fuga voluptatem nemo veniam tenetur veritatis quibusdam
+							explicabo sunt deleniti harum repellat quis possimus modi eaque cum unde totam temporibus eos quas nostrum.</div>
+						<div>Itaque error odit mollitia adipisci accusantium voluptas. Dicta qui quo officia molestiae aliquam architecto
+							modi dignissimos. Autem est officiis ex? Rem quasi aperiam quas temporibus explicabo amet eaque. Nam illum.</div>
+						<div>Reiciendis maxime aperiam fuga magnam vero unde eum praesentium. Veritatis qui iure nulla commodi sequi eos
+							praesentium ad dignissimos omnis eum quo aliquam assumenda beatae illo eligendi quia ab unde!</div>
+						<div>Non enim facilis soluta nobis at velit ut fuga suscipit a fugit magni ipsa consequatur itaque eius eligendi
+							est eveniet voluptate eum nam sit laborum quaerat officiis accusamus dolor amet.</div>
+						<div>Iure cum ex exercitationem natus sit nesciunt assumenda error magni autem repudiandae animi consequatur
+							rerum at dicta officiis qui sint sapiente tenetur! Rem ea veniam necessitatibus velit sint sed suscipit.</div>
+						<div>Nisi rem nobis aperiam optio id nesciunt dolores! Eligendi deserunt fugiat fuga mollitia consectetur
+							explicabo minus esse consequuntur nulla earum facere ab animi corporis unde temporibus quis nesciunt quod
+							officia!</div>
+						<div>Odit maiores laborum doloremque distinctio earum veniam odio repudiandae accusamus obcaecati quas quaerat
+							saepe sapiente quisquam magni architecto quidem ab necessitatibus sit. Saepe voluptates itaque architecto.
+							Ducimus quos omnis error!</div>
+						<div>Vero nesciunt voluptatem tempore repudiandae quisquam pariatur doloribus distinctio incidunt. Eum explicabo
+							qui vitae eius maxime voluptas autem officiis at nihil delectus vero consequuntur sapiente modi quos atque
+							provident inventore.</div>
+						<div>Nesciunt saepe et architecto porro dicta sed possimus dolorem corrupti repellendus a pariatur unde omnis
+							commodi facilis praesentium. Ab quasi nihil nam culpa non ducimus iure laudantium asperiores cum accusamus?</div>
+						<div>Reprehenderit nulla unde facilis quae quisquam voluptate magni provident repudiandae ab sapiente aliquid
+							doloremque voluptates dolores omnis itaque? Unde consectetur adipisci sed enim veritatis maxime provident harum
+							odit labore laudantium.</div>
+						<div>Quaerat alias perferendis porro repellendus earum maiores quasi perspiciatis tempora aperiam dignissimos
+							esse labore assumenda blanditiis eaque possimus omnis qui dolores facere enim cum. Labore iusto harum voluptas
+							aliquam dolorum.</div>
+						<div>Vel pariatur doloremque nobis sapiente laudantium velit recusandae cupiditate quod magni necessitatibus
+							numquam nisi nemo eligendi exercitationem ullam repudiandae expedita placeat sequi voluptatum obcaecati hic
+							praesentium nihil maiores error delectus.</div>
+						<div>Nulla reprehenderit modi saepe quod repellat culpa explicabo soluta officiis quisquam eligendi iure nisi
+							nesciunt blanditiis vero quae enim ullam reiciendis repellendus pariatur assumenda tempora tenetur laboriosam.
+							Sint voluptas quaerat.</div>
+						<div>Neque dolores facilis sapiente facere accusamus itaque consequuntur quaerat vitae repellat nisi sunt
+							voluptate eius iure. Eaque adipisci sapiente cum ad eum ab tempore sunt quo officia eveniet? Rem velit.</div>
+						<div>Accusantium vitae amet ipsum saepe neque assumenda odio illo molestiae natus hic iure officiis fuga non
+							consequuntur incidunt fugit facere maxime quidem minima dignissimos animi ad in cumque aperiam illum.</div>
+						<div>Officia est commodi laudantium officiis labore aperiam quos vitae unde nobis facere autem delectus vel
+							assumenda quas voluptate obcaecati facilis qui cupiditate itaque tempora culpa quia fuga hic ad voluptates.</div>
+
+
+					</div>
+					<div class="article-bottom">
+						<button class="btn btn-primary">赞 <span class="badge">1k</span></button>
+						<div class="comments-container">
+							<div class="comments-list">
+								<div class="comments-topbar">
+									<div class="col-xm-6 topbar-title">
+										1,158 条评论
+									</div>
+								</div>
+								<div class="media">
+									<div class="media-left media-top">
+										<img src="img/avatar.jpg" class="media-object" style="width:80px">
+									</div>
+									<div class="media-body">
+										<span class="media-heading h4">God23Bin</span>
+										<span class="comment-time">2020/6/13</span>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum vero earum quo modi ullam natus voluptatem consectetur cumque facere necessitatibus iste error assumenda repellendus veniam doloribus animi laboriosam impedit quis.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta odit sapiente quas qui atque quisquam tempore fugit sed molestiae consectetur repellat alias. Sint mollitia labore ut autem architecto dolorum quibusdam.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis eveniet sit voluptatibus ea non accusamus molestias possimus beatae assumenda quisquam nobis maiores delectus repellat sequi minus impedit? Aliquid iste.</p>
+									</div>
+								</div>
+								<div class="media">
+									<div class="media-left media-top">
+										<img src="img/avatar.jpg" class="media-object" style="width:80px">
+									</div>
+									<div class="media-body">
+										<span class="media-heading h4">God23Bin</span>
+										<span class="comment-time">2020/6/13</span>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum vero earum quo modi ullam natus voluptatem consectetur cumque facere necessitatibus iste error assumenda repellendus veniam doloribus animi laboriosam impedit quis.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta odit sapiente quas qui atque quisquam tempore fugit sed molestiae consectetur repellat alias. Sint mollitia labore ut autem architecto dolorum quibusdam.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis eveniet sit voluptatibus ea non accusamus molestias possimus beatae assumenda quisquam nobis maiores delectus repellat sequi minus impedit? Aliquid iste.</p>
+									</div>
+								</div>
+								<div class="media">
+									<div class="media-left media-top">
+										<img src="img/avatar.jpg" class="media-object" style="width:80px">
+									</div>
+									<div class="media-body">
+										<span class="media-heading h4">God23Bin</span>
+										<span class="comment-time">2020/6/13</span>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum vero earum quo modi ullam natus voluptatem consectetur cumque facere necessitatibus iste error assumenda repellendus veniam doloribus animi laboriosam impedit quis.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta odit sapiente quas qui atque quisquam tempore fugit sed molestiae consectetur repellat alias. Sint mollitia labore ut autem architecto dolorum quibusdam.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis eveniet sit voluptatibus ea non accusamus molestias possimus beatae assumenda quisquam nobis maiores delectus repellat sequi minus impedit? Aliquid iste.</p>
+									</div>
+								</div>
+								<div class="media">
+									<div class="media-left media-top">
+										<img src="img/avatar.jpg" class="media-object" style="width:80px">
+									</div>
+									<div class="media-body">
+										<span class="media-heading h4">God23Bin</span>
+										<span class="comment-time">2020/6/13</span>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum vero earum quo modi ullam natus voluptatem consectetur cumque facere necessitatibus iste error assumenda repellendus veniam doloribus animi laboriosam impedit quis.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta odit sapiente quas qui atque quisquam tempore fugit sed molestiae consectetur repellat alias. Sint mollitia labore ut autem architecto dolorum quibusdam.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis eveniet sit voluptatibus ea non accusamus molestias possimus beatae assumenda quisquam nobis maiores delectus repellat sequi minus impedit? Aliquid iste.</p>
+									</div>
+								</div>
+								<div class="comment-respond">
+									<h3 class="comment-reply-title">发表评论</h3>
+									<form action="" class="comment-form">
+										<label for="comment">评论</label>
+										<textarea id="comment" rows="6" cols="100" maxlength="65525" required="required"></textarea>
+										<p class="comment-submit">
+											<button type="button" class="btn btn-primary">发表评论</button>
+										</p>
+									</form>
+								</div>
+								<ul class="pager">
+									<li><a href="">上一页</a></li>
+									<li><a href="">1</a></li>
+									<li><a href="">2</a></li>
+									<li><a href="">3</a></li>
+									<li class="disabled"><a href="">下一页</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<!-- 侧栏第一部分 -->
+					<div class="side-bar list-group">
+						<a href="#" class="list-group-item">关于前端</a>
+						<a href="#" class="list-group-item">关于后端</a>
+						<a href="#" class="list-group-item">关于游戏</a>
+						<a href="#" class="list-group-item">关于音乐</a>
+						<a href="#" class="list-group-item">关于电影</a>
+						<a href="#" class="list-group-item">关于程序</a>
+					</div>
+					<!-- 侧栏第二部分 -->
+					<div class="side-bar-hot-article">
+						<div class="hot-title">
+							点击量高的文章
+						</div>
+						<div class="hot-body">
+							<div class="list">
+								<div class="item">
+									<div class="title">
+										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
+									</div>
+									<div class="desc">
+										15k阅读 10k评论
+									</div>
+								</div>
+								<div class="item">
+									<div class="title">
+										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
+									</div>
+									<div class="desc">
+										15k阅读 10k评论
+									</div>
+								</div>
+								<div class="item">
+									<div class="title">
+										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
+									</div>
+									<div class="desc">
+										15k阅读 10k评论
+									</div>
+								</div>
+								<div class="item">
+									<div class="title">
+										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
+									</div>
+									<div class="desc">
+										15k阅读 10k评论
+									</div>
+								</div>
+								<div class="item">
+									<div class="title">
+										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
+									</div>
+									<div class="desc">
+										15k阅读 10k评论
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 侧栏第三部分 -->
+					<div class="side-bar-label">
+						<div class="label-title">
+							热门标签
+						</div>
+						<div class="label-content">
+							<a class="label label-default label-lg">HTML</a>
+							<a class="label label-default">Java</a>
+							<a class="label label-default">MySQL</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button id="btn_top" title="回到顶部" class="btn btn-default">
+		    返回顶部
+		</button>
+		<div class="footer">
+			CopyRight©2020-2035  All Right Reserved God23Bin个人博客版权所有 粤ICP备19002352号-1 粤网文（2016）1650-207号 粤公网安备 19991109006753号
+		</div>
+
+		<script th:src="@{/js/jquery-3.4.1.js}" src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/umbrella.js}" src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/mouseclick.js}" src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/main.js}" src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

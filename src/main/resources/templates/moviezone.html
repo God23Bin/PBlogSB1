@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>电影专区</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/zone.css}" href="css/zone.css" />
+	</head>
+	<body class="bg-content">
+		<div class="container-fluid">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="control/personal_center.html"></a></li>
+							<li><a href="php/logout.html">注销</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+		</div>
+		
+		<div class="container movie-container">
+			<h1 id="movie-top">最近观看的影片</h1>
+			<div id="movie-body" class="clearfix">
+				<div class="btn btn-danger">全部</div>
+					<ul class="movie-list">
+						<li>
+							<div class="cover col-sm-3" >
+								
+								<a href="https://www.bilibili.com/video/BV14W411R7vx?from=search&seid=4399832710856549286" target="_blank"><img src="http://img1.funshion.com/sdw?oid=0f8127a13a095c3c8fc4df76f22c0624&w=200&h=280" ></a>
+								<h5>哆啦A梦：大雄的金银岛</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://img2.funshion.com/sdw?oid=0ad82e0305e676b45d22e87efa713c7b&w=200&h=280" ></a>
+								<h5>湮灭</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://img1.funshion.com/sdw?oid=86ca36d3dee60854cfac91b31220165c&w=200&h=280" ></a>
+								<h5>超脑48小时</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://img.funshion.com/sdw?oid=a05e5ae90cbdd92f939b759f393fc7f1&w=200&h=280" ></a>
+								<h5>复仇者联盟4：终局之战</h5>
+							</div>
+							
+						</li>
+						<li>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://img1.funshion.com/sdw?oid=5c0cee72f0dbdbe2a1b31ccee76005bd&w=200&h=280" ></a>
+								<h5>攻壳机动队</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://img3.funshion.com/sdw?oid=d3f04ef8dc1fa16ea26ffc46968fbb96&w=200&h=280" ></a>
+								<h5>蜘蛛侠：英雄远征</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://img3.funshion.com/sdw?oid=93196ef045d1bd0df37a7cd7dc1160a1&w=200&h=280" ></a>
+								<h5>银河守卫队</h5>
+							</div>
+							<div class="cover col-sm-3" >
+								
+								<a href="#"><img src="http://img2.funshion.com/sdw?oid=134329365a90fa381b97523ca09e26aa&w=200&h=280" ></a>
+								<h5>终结者：黑暗命运</h5>
+							</div>
+							
+						</li>
+						
+						
+					</ul>
+				
+			</div>
+		</div>
+		
+		<div class="footer">
+			CopyRight©2020-2035 All Right Reserved God23Bin个人博客版权所有 粤ICP备19002352号-1 粤网文（2016）1650-207号 粤公网安备 19991109006753号
+		</div>
+
+
+		<script th:src="@{/js/jquery-3.4.1.js}" src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/umbrella.js}" src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/mouseclick.js}" src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/main.js}" src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		
+
+	</body>
+</html>

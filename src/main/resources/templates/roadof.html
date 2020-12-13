@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>Java之路</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/fakeLoader.css}" href="css/fakeLoader.css" />
+	</head>
+	<body>
+		<div id="fakeloader"></div>
+		<div class="container-fluid bg-content">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Logo和适应移动端的按钮，通过点击按钮控制导航栏 -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">God23Bin的个人博客</a>
+					</div>
+
+					<!-- 导航，放置链接，搜索，登录注册 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页 <span class="sr-only">(current)</span></a>
+							</li>
+							<li>
+								<a href="roadof.html">Java之路</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									我的文章 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="my_articles.html">Java</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">计算机基础</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">前端知识</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									专区 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="gamezone.html">游戏专区</a></li>
+									<li><a href="moviezone.html">电影专区</a></li>
+									<li><a href="musiczone.html">音乐专区</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="picbed.html">图库&我的图床</a>
+							</li>
+							<li>
+								<a href="about_me.html">关于我</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="control/personal_center.html"></a></li>
+							<li><a href="php/logout.html">注销</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜一下">
+							</div>
+							<button type="submit" class="btn btn-default btn-md">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 搜索
+							</button>
+						</form>
+
+					</div><!-- /.navbar-collapse 导航栏折叠-->
+				</div><!-- /.container-fluid 流体容器-->
+			</nav>
+		</div>
+		<div class="container container-articles-list">
+			<h1>Java之路</h1>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque obcaecati enim suscipit ducimus quas accusantium asperiores dolorum nobis iure ipsum repudiandae ea architecto eum quis tenetur quidem rem ipsam aliquam?</div>
+			<div>Alias esse hic sapiente sit repudiandae ullam perferendis perspiciatis eum molestias culpa natus quis recusandae aspernatur optio maiores. Eaque quam minus vitae repellat ducimus pariatur asperiores officia eius mollitia architecto.</div>
+			<div>Iusto sint qui ratione excepturi perferendis sed accusantium praesentium labore sapiente quod. Unde quas perferendis pariatur totam ipsa esse. Similique amet iste vitae harum blanditiis vero excepturi error quia cumque!</div>
+			<div>Perspiciatis quaerat officiis eveniet magni optio provident reiciendis maiores aut quo necessitatibus quisquam odit repellendus doloribus sed tenetur perferendis officia est cupiditate iusto explicabo? Itaque dolore ducimus deserunt autem numquam.</div>
+			<div>Commodi ad aliquid possimus sunt deserunt consectetur quaerat. Officiis velit veniam repudiandae aperiam repellendus laboriosam nostrum aliquid necessitatibus architecto soluta nihil esse rerum mollitia accusantium minus quis eius itaque officia?</div>
+			<div>Totam necessitatibus voluptate repudiandae sunt maxime facilis amet praesentium officiis excepturi vero ipsum iure laudantium alias dolores quisquam blanditiis reiciendis! Vero perferendis temporibus officiis explicabo possimus necessitatibus eveniet nobis laborum.</div>
+			<div>Nihil cum exercitationem fugiat facere libero accusamus neque suscipit sit architecto placeat atque alias fuga! Aspernatur ipsa modi assumenda ratione fugiat pariatur aliquam eligendi illo suscipit officiis impedit officia ducimus.</div>
+			<div>Ipsum harum aut commodi facilis. Blanditiis alias id dolore mollitia aliquam illo sit. Facere amet minus tempora doloribus laborum harum perspiciatis sint expedita eos nemo molestiae distinctio delectus fugit deserunt.</div>
+			<div>Ab esse quod officia cumque corporis harum animi nemo voluptas ducimus quaerat quam eligendi provident inventore ipsam in rerum numquam suscipit quas reiciendis at necessitatibus adipisci magni perferendis iste eaque.</div>
+			<div>Ipsam optio saepe dicta provident ducimus quibusdam suscipit dolores mollitia eligendi repellendus tenetur ut consequuntur placeat dolorum est voluptatem nobis maiores aliquid officia ad iure iste magni debitis at facere!</div>
+			<div>Sunt tempore nostrum aut repudiandae tempora est veniam harum excepturi? Ea corporis tenetur delectus molestias natus dolorem quis at ex repudiandae dolore. Quis architecto omnis officiis quasi laboriosam eligendi quae.</div>
+			<div>In unde perferendis optio molestiae cupiditate magnam quisquam sit eaque assumenda hic aperiam sapiente quasi iste. Quasi totam repudiandae recusandae sapiente inventore modi! Vel facere quidem corporis a at numquam.</div>
+			<div>Non maiores natus laborum deserunt doloribus tenetur adipisci fuga culpa explicabo quos dolor quas. Accusantium soluta atque quibusdam quas dolor ab reiciendis nostrum repudiandae laboriosam illo ducimus officiis eaque repellendus.</div>
+			<div>Aliquid magnam quis voluptates inventore vero assumenda explicabo quo cumque minima quod perspiciatis provident quisquam esse rerum praesentium neque accusamus totam cum eius sapiente pariatur illo aliquam voluptatum. Deleniti et.</div>
+			<div>Doloribus ex unde ducimus esse optio minus illum consequatur qui praesentium asperiores. Quibusdam fugit illum culpa quasi dolorem sed harum dignissimos consequuntur modi reprehenderit repudiandae libero expedita porro natus unde!</div>
+			<div>Harum natus nam omnis temporibus dignissimos voluptate blanditiis quas esse quam eos officia quasi quibusdam culpa maxime magnam assumenda excepturi provident nostrum neque ut ratione ipsam consequatur repellendus nesciunt laboriosam.</div>
+			<div>Atque tenetur quibusdam ipsum esse accusantium cupiditate similique odio eius labore ad laboriosam exercitationem eos excepturi! Accusamus odit amet excepturi pariatur nulla dolore sed molestias. Officiis enim reprehenderit provident quod.</div>
+			<div>Explicabo suscipit ex quaerat animi id a amet maiores accusantium dicta nam consequatur assumenda quasi ipsam sint repellat sit officia necessitatibus temporibus recusandae enim eos beatae cumque modi. Laborum nesciunt!</div>
+			<div>Obcaecati ut sint quam perferendis ab deleniti architecto assumenda dolorem vitae temporibus est esse culpa. Repellendus omnis dolorem asperiores blanditiis aut ab recusandae officiis necessitatibus minima harum molestiae corrupti maiores.</div>
+			<div>Aspernatur modi mollitia minus provident optio minima quisquam veniam officia omnis ipsam repellat deserunt est rem! Ipsam ratione sapiente quo corporis provident iure quos perferendis repudiandae id quis blanditiis quia?</div>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque obcaecati enim suscipit ducimus quas accusantium asperiores dolorum nobis iure ipsum repudiandae ea architecto eum quis tenetur quidem rem ipsam aliquam?</div>
+			<div>Alias esse hic sapiente sit repudiandae ullam perferendis perspiciatis eum molestias culpa natus quis recusandae aspernatur optio maiores. Eaque quam minus vitae repellat ducimus pariatur asperiores officia eius mollitia architecto.</div>
+			<div>Iusto sint qui ratione excepturi perferendis sed accusantium praesentium labore sapiente quod. Unde quas perferendis pariatur totam ipsa esse. Similique amet iste vitae harum blanditiis vero excepturi error quia cumque!</div>
+			<div>Perspiciatis quaerat officiis eveniet magni optio provident reiciendis maiores aut quo necessitatibus quisquam odit repellendus doloribus sed tenetur perferendis officia est cupiditate iusto explicabo? Itaque dolore ducimus deserunt autem numquam.</div>
+			<div>Commodi ad aliquid possimus sunt deserunt consectetur quaerat. Officiis velit veniam repudiandae aperiam repellendus laboriosam nostrum aliquid necessitatibus architecto soluta nihil esse rerum mollitia accusantium minus quis eius itaque officia?</div>
+			<div>Totam necessitatibus voluptate repudiandae sunt maxime facilis amet praesentium officiis excepturi vero ipsum iure laudantium alias dolores quisquam blanditiis reiciendis! Vero perferendis temporibus officiis explicabo possimus necessitatibus eveniet nobis laborum.</div>
+			<div>Nihil cum exercitationem fugiat facere libero accusamus neque suscipit sit architecto placeat atque alias fuga! Aspernatur ipsa modi assumenda ratione fugiat pariatur aliquam eligendi illo suscipit officiis impedit officia ducimus.</div>
+			<div>Ipsum harum aut commodi facilis. Blanditiis alias id dolore mollitia aliquam illo sit. Facere amet minus tempora doloribus laborum harum perspiciatis sint expedita eos nemo molestiae distinctio delectus fugit deserunt.</div>
+			<div>Ab esse quod officia cumque corporis harum animi nemo voluptas ducimus quaerat quam eligendi provident inventore ipsam in rerum numquam suscipit quas reiciendis at necessitatibus adipisci magni perferendis iste eaque.</div>
+			<div>Ipsam optio saepe dicta provident ducimus quibusdam suscipit dolores mollitia eligendi repellendus tenetur ut consequuntur placeat dolorum est voluptatem nobis maiores aliquid officia ad iure iste magni debitis at facere!</div>
+			<div>Sunt tempore nostrum aut repudiandae tempora est veniam harum excepturi? Ea corporis tenetur delectus molestias natus dolorem quis at ex repudiandae dolore. Quis architecto omnis officiis quasi laboriosam eligendi quae.</div>
+			<div>In unde perferendis optio molestiae cupiditate magnam quisquam sit eaque assumenda hic aperiam sapiente quasi iste. Quasi totam repudiandae recusandae sapiente inventore modi! Vel facere quidem corporis a at numquam.</div>
+			<div>Non maiores natus laborum deserunt doloribus tenetur adipisci fuga culpa explicabo quos dolor quas. Accusantium soluta atque quibusdam quas dolor ab reiciendis nostrum repudiandae laboriosam illo ducimus officiis eaque repellendus.</div>
+			<div>Aliquid magnam quis voluptates inventore vero assumenda explicabo quo cumque minima quod perspiciatis provident quisquam esse rerum praesentium neque accusamus totam cum eius sapiente pariatur illo aliquam voluptatum. Deleniti et.</div>
+			<div>Doloribus ex unde ducimus esse optio minus illum consequatur qui praesentium asperiores. Quibusdam fugit illum culpa quasi dolorem sed harum dignissimos consequuntur modi reprehenderit repudiandae libero expedita porro natus unde!</div>
+			<div>Harum natus nam omnis temporibus dignissimos voluptate blanditiis quas esse quam eos officia quasi quibusdam culpa maxime magnam assumenda excepturi provident nostrum neque ut ratione ipsam consequatur repellendus nesciunt laboriosam.</div>
+			<div>Atque tenetur quibusdam ipsum esse accusantium cupiditate similique odio eius labore ad laboriosam exercitationem eos excepturi! Accusamus odit amet excepturi pariatur nulla dolore sed molestias. Officiis enim reprehenderit provident quod.</div>
+			<div>Explicabo suscipit ex quaerat animi id a amet maiores accusantium dicta nam consequatur assumenda quasi ipsam sint repellat sit officia necessitatibus temporibus recusandae enim eos beatae cumque modi. Laborum nesciunt!</div>
+			<div>Obcaecati ut sint quam perferendis ab deleniti architecto assumenda dolorem vitae temporibus est esse culpa. Repellendus omnis dolorem asperiores blanditiis aut ab recusandae officiis necessitatibus minima harum molestiae corrupti maiores.</div>
+			<div>Aspernatur modi mollitia minus provident optio minima quisquam veniam officia omnis ipsam repellat deserunt est rem! Ipsam ratione sapiente quo corporis provident iure quos perferendis repudiandae id quis blanditiis quia?</div>
+			
+			<button id="btn_pay" title="支持博主" class="btn btn-default">
+				支持博主
+			</button>
+			<div class="container surpport">
+				<img src="img/support.jpg">
+			</div>
+
+			<button id="btn_top" title="回到顶部" class="btn btn-default">
+				返回顶部
+			</button>
+
+		</div>
+		<div class="footer">
+			CopyRight©2020-2035 All Right Reserved God23Bin个人博客版权所有 粤ICP备19002352号-1 粤网文（2016）1650-207号 粤公网安备 19991109006753号
+		</div>
+		
+		<!-- 页面加载 -->
+		<div class="loading-page">
+			<div class="counter">
+				<p>loading</p>
+				<h1>0%</h1>
+				<hr />
+			</div>
+		</div>
+
+		<script th:src="@{/js/jquery-3.4.1.js}" src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/umbrella.js}" src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/mouseclick.js}" src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/main.js}" src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>
