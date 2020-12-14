@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<title>后台首页-统计</title>
@@ -52,7 +52,7 @@
 								博客管理<span id="slide1" class="pull-right glyphicon glyphicon-chevron-down"></span>
 							</a>
 							<ul id="docCollapse" class="nav nav-list collapse">
-								<li><a href="my-articles.html">我的文章</a></li>
+								<li><a th:href="@{/admin/my_articles}" href="my-articles.html">我的文章</a></li>
 								<li><a href="edit.html">写博客</a></li>
 								<li><a href="drawcase.html">草稿箱</a></li>
 								<li><a href="bincase.html">垃圾箱</a></li>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<title>用户管理</title>
@@ -177,17 +177,18 @@
 				</div>
 				<!-- 尾部结束 -->
 			</div>
-			<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
-			<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-			<script src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
+		</div>
+		<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
 
-			<script type="text/javascript">
-				function chevron_toggle() {
-					$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-up");
-					$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-down");
-				}
+		<script type="text/javascript">
+			function chevron_toggle() {
+				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-up");
+				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-down");
+			}
 
 
-			</script>
+		</script>
 	</body>
 </html>

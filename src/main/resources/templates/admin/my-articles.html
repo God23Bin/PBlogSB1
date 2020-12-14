@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<title>我的文章</title>
@@ -97,12 +97,12 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>VMware15上安装LinuxCentOS7以及网络配置</td>
-									<td>500</td>
-									<td>10</td>
-									<td>50</td>
-									<td>2020-9-20</td>
+								<tr th:each="blog : ${allBlog}">
+									<td th:text="${blog.getTitle()}">VMware15上安装LinuxCentOS7以及网络配置</td>
+									<td th:text="${blog.getReadingCount()}">500</td>
+									<td th:text="${blog.getCommentCount()}">10</td>
+									<td th:text="${blog.getLikeCount()}">50</td>
+									<td th:text="${blog.getCreateTime()}">2020-9-20</td>
 									<td>
 										<div class="btn-group btn-group-sm">
 											<button class="btn btn-primary btn-sm">修改</button>
@@ -110,45 +110,7 @@
 										</div>
 									</td>
 								</tr>
-								<tr>
-									<td>如何实现登录的</td>
-									<td>500</td>
-									<td>10</td>
-									<td>50</td>
-									<td>2020-9-20</td>
-									<td>
-										<div class="btn-group btn-group-sm">
-											<button class="btn btn-primary btn-sm">修改</button>
-											<button class="btn btn-danger btn-sm">删除</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>爬虫：HttpClient和Jsoup的应用</td>
-									<td>500</td>
-									<td>10</td>
-									<td>50</td>
-									<td>2020-9-20</td>
-									<td>
-										<div class="btn-group btn-group-sm">
-											<button class="btn btn-primary btn-sm">修改</button>
-											<button class="btn btn-danger btn-sm">删除</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>XAMPP使用本地MySQL</td>
-									<td>500</td>
-									<td>10</td>
-									<td>50</td>
-									<td>2020-9-20</td>
-									<td>
-										<div class="btn-group btn-group-sm">
-											<button class="btn btn-primary btn-sm">修改</button>
-											<button class="btn btn-danger btn-sm">删除</button>
-										</div>
-									</td>
-								</tr>
+
 							</tbody>
 						</table>
 
@@ -192,15 +154,16 @@
 				</div>
 				<!-- 尾部结束 -->
 			</div>
-			<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
-			<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-			<script th:src="@{/admin/plugins/editor.md/editormd.js}" src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
+		</div>
+		<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/editor.md/editormd.js}" src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
 
-			<script type="text/javascript">
-				function chevron_toggle() {
-					$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-up");
-					$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-down");
-				}
-			</script>
+		<script type="text/javascript">
+			function chevron_toggle() {
+				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-up");
+				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-down");
+			}
+		</script>
 	</body>
 </html>
