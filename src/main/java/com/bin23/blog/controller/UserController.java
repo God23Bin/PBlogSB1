@@ -35,22 +35,11 @@ public class UserController {
         return "login";
     }
 
-    /**
-     * @PreAuthorize 用于判断用户是否有指定权限，没有就不能访问
-     * @return
-     */
-    @RequestMapping("/admin")
-    @ResponseBody
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String printAdmin() {
-        return "如果你看见这句话，说明你有ROLE_ADMIN角色";
-    }
-
     @RequestMapping("/user")
     @ResponseBody
     @PreAuthorize("hasRole('ROLE_USER')")
     public String printUser() {
-        return "如果你看见这句话，说明你有ROLE_USER角色";
+        return "你有ROLE_USER角色";
     }
 
     @GetMapping("/toRegisterPage")

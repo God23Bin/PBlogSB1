@@ -31,7 +31,12 @@ $(function() {
 		width: "100%",
 		height: 650,
 		syncScrolling: "single",
-		path: "plugins/editor.md/lib/",
+		path: "/admin/plugins/editor.md/lib/",
+		saveHTMLToTextarea: true, //这个配置为了能够提交表单，使用这个配置可以让构造出来的HTML代码直接在第二个隐藏的textarea域中，方便post提交表单。
+		/* 上传图片配置 */
+		imageUpload : true,
+		imageFormats : [ "jpg", "jpeg", "gif", "png", "bmp", "webp" ],
+		imageUploadURL : "${proPath }/base/blog/upFile", //注意你后端的上传图片服务地址
 		onload: function() {
 			var keyMap = {
 				"Ctrl-S": function(cm) {

@@ -53,10 +53,10 @@
 								博客管理<span id="slide1" class="pull-right glyphicon glyphicon-chevron-down"></span>
 							</a>
 							<ul id="docCollapse" class="nav nav-list collapse">
-								<li><a href="my-articles.html">我的文章</a></li>
-								<li><a href="edit.html">写博客</a></li>
-								<li><a href="drawcase.html">草稿箱</a></li>
-								<li><a href="bincase.html">垃圾箱</a></li>
+								<li><a th:href="@{/admin/my_articles}" href="my-articles.html">我的文章</a></li>
+								<li><a th:href="@{/admin/edit_blog}" href="edit.html">写博客</a></li>
+								<li><a th:href="@{/admin/drawcase}" href="drawcase.html">草稿箱</a></li>
+								<li><a th:href="@{/admin/bincase}" href="bincase.html">垃圾箱</a></li>
 							</ul>
 						</li>
 						<li role="presentation"><a href="user-manage.html">用户管理</a></li>

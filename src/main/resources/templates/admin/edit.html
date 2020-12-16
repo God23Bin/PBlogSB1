@@ -57,7 +57,7 @@
 								博客管理<span id="slide1" class="pull-right glyphicon glyphicon-chevron-down"></span>
 							</a>
 							<ul id="docCollapse" class="nav nav-list collapse">
-								<li><a href="my-articles.html">我的文章</a></li>
+								<li><a th:href="@{/admin/my_articles}" href="my-articles.html">我的文章</a></li>
 								<li class="active"><a href="edit.html">写博客</a></li>
 								<li><a href="drawcase.html">草稿箱</a></li>
 								<li><a href="bincase.html">垃圾箱</a></li>
@@ -93,12 +93,8 @@
 											<select id="categoryId" name="categoryId" class="select2" style="width: 100%;">
 												<!--value为空的option，存放提示语-->
 												<option></option>
-												<option value="1">前端</option>
-												<option value="2">后端</option>
-												<option value="3">全栈</option>
-												<option value="4">架构</option>
-												<option value="5">天上人间</option>
-												<option value="6">我是一只猫</option>
+												<option th:each="sort : ${allSort}" th:text="${sort.getSortName()}" th:value="${sort.getId()}" value="1"></option>
+
 											</select>
 										</div>
 										<!-- /.form-group -->
@@ -163,6 +159,10 @@
 				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-up");
 				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-down");
 			}
+
+			$(function () {
+
+			})
 		</script>
 	</body>
 </html>
