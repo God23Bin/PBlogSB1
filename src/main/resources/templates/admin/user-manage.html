@@ -54,16 +54,16 @@
 							</a>
 							<ul id="docCollapse" class="nav nav-list collapse">
 								<li><a th:href="@{/admin/my_articles}" href="my-articles.html">我的文章</a></li>
-								<li><a th:href="@{/admin/edit_blog}" href="edit.html">写博客</a></li>
+								<li><a th:href="@{/admin/blog/edit}" href="edit.html">写博客</a></li>
 								<li><a th:href="@{/admin/drawcase}" href="drawcase.html">草稿箱</a></li>
 								<li><a th:href="@{/admin/bincase}" href="bincase.html">垃圾箱</a></li>
 							</ul>
 						</li>
 						<li class="active" role="presentation"><a href="user-manage.html" >用户管理</a></li>
-						<li role="presentation"><a href="class-label.html">分类标签</a></li>
+						<li role="presentation"><a th:href="@{/admin/class_label}" href="class-label.html">分类标签</a></li>
 						<li role="presentation"><a href="comments.html">评论留言</a></li>
-						<li role="presentation"><a href="img-manage.html">图片管理</a></li>
-						<li role="presentation"><a href="attach-manage.html">附件管理</a></li>
+						<li role="presentation"><a th:href="@{/admin/img_manage}" href="img-manage.html">图片管理</a></li>
+						<li role="presentation"><a th:href="@{/admin/attach_manage}" href="attach-manage.html">附件管理</a></li>
 					</ul>
 				</div>
 				<!---->
@@ -171,16 +171,11 @@
 				</div>
 				<!-- 中间结束 -->
 
-				<!-- 尾部开始 -->
-				<div class="row">
 
-				</div>
-				<!-- 尾部结束 -->
 			</div>
 		</div>
 		<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
 		<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
 
 		<script type="text/javascript">
 			function chevron_toggle() {

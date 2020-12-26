@@ -56,13 +56,13 @@
 							</a>
 							<ul id="docCollapse" class="nav nav-list collapse">
 								<li><a th:href="@{/admin/my_articles}" href="my-articles.html">我的文章</a></li>
-								<li><a href="edit.html">写博客</a></li>
-								<li><a href="drawcase.html">草稿箱</a></li>
-								<li class="active"><a href="bincase.html">垃圾箱</a></li>
+								<li><a th:href="@{/admin/blog/edit}" href="edit.html">写博客</a></li>
+								<li><a th:href="@{admin/drawcase}" href="drawcase.html">草稿箱</a></li>
+								<li class="active"><a th:href="@{/admin/bincase}" href="bincase.html">垃圾箱</a></li>
 							</ul>
 						</li>
 						<li role="presentation"><a href="user-manage.html" >用户管理</a></li>
-						<li role="presentation"><a href="class-label.html">分类标签</a></li>
+						<li role="presentation"><a th:href="@{/admin/class_label}" href="class-label.html">分类标签</a></li>
 						<li role="presentation"><a href="comments.html">评论留言</a></li>
 						<li role="presentation"><a href="img-manage.html">图片管理</a></li><li role="presentation"><a href="attach-manage.html">附件管理</a></li>
 					</ul>
@@ -89,99 +89,41 @@
 							<thead>
 								<tr>
 									<th width="55%">文章标题</th>
-									<th width="15%">保存时间</th>
+									<th width="15%">进来的时间</th>
 									<th width="15%">想要的操作</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>VMware15上安装LinuxCentOS7以及网络配置</td>
-									<td>2020-9-20</td>
+								<tr th:each="blog : ${allBlog}">
+									<td th:text="${blog.getTitle()}">VMware15上安装LinuxCentOS7以及网络配置</td>
+									<td th:text="${blog.getUpdateTime()}">2020-9-20</td>
 									<td>
 										<div class="btn-group btn-group-sm">
-											<button class="btn btn-primary btn-sm">恢复文章</button>
-											<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal1">
-												永久删除
-											</button>
-											<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-															<h4 class="modal-title" id="myModalLabel1">你确定要删除？</h4>
-														</div>
-														<div class="modal-body">
-															一旦删除，就找不回了哦
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-															<button type="button" class="btn btn-primary">删除</button>
-														</div>
-													</div>
-												</div>
-											</div>
+											<button class="btn btn-primary btn-sm"><a th:href="@{/admin/blog/recover(blogId=${blog.getId()})}" style="color: white; text-decoration: none">恢复文章</a></button>
+											<button class="btn btn-danger btn-sm"><a th:href="@{/admin/blog/delete(blogId=${blog.getId()})}" style="color: white; text-decoration: none">永久删除</a></button>
+<!--											<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal1">-->
+<!--												永久删除-->
+<!--											</button>-->
+<!--											<div class="modal fade" id="myModal1" th:id="${blog.getId()}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">-->
+<!--												<div class="modal-dialog">-->
+<!--													<div class="modal-content">-->
+<!--														<div class="modal-header">-->
+<!--															<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+<!--															<h4 class="modal-title" id="myModalLabel1">你确定要删除？</h4>-->
+<!--														</div>-->
+<!--														<div class="modal-body">-->
+<!--															一旦删除 <span th:text="${blog.getTitle()}"></span>，就找不回了哦-->
+<!--														</div>-->
+<!--														<div class="modal-footer">-->
+<!--															<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+<!--															<button type="button" class="btn btn-primary"><a th:href="@{/admin/blog/delete(blogId=${blog.getId()})}" style="color: white; text-decoration: none">删除</a></button>-->
+<!--														</div>-->
+<!--													</div>-->
+<!--												</div>-->
+<!--											</div>-->
 										</div>
 									</td>
 								</tr>
-								<tr>
-									<td>如何实现登录的</td>
-									<td>2020-9-20</td>
-									<td>
-										<div class="btn-group btn-group-sm">
-											<button class="btn btn-primary btn-sm">恢复文章</button>
-											<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal2">
-												永久删除
-											</button>
-											<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-															<h4 class="modal-title" id="myModalLabel2">你确定要删除？</h4>
-														</div>
-														<div class="modal-body">
-															一旦删除，就找不回了哦
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-															<button type="button" class="btn btn-primary">删除</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>爬虫：HttpClient和Jsoup的应用</td>
-									<td>2020-9-20</td>
-									<td>
-										<div class="btn-group btn-group-sm">
-											<button class="btn btn-primary btn-sm">恢复文章</button>
-											<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal3">
-												永久删除
-											</button>
-											<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-															<h4 class="modal-title" id="myModalLabel3">你确定要删除？</h4>
-														</div>
-														<div class="modal-body">
-															一旦删除，就找不回了哦
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-															<button type="button" class="btn btn-primary">删除</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</td>
-								</tr>
-
 							</tbody>
 						</table>
 
@@ -192,21 +134,25 @@
 							<div class="col-sm-4">
 								<nav aria-label="Page navigation">
 									<ul class="pagination">
-										<li>
-											<a href="#" aria-label="Previous">
+										<li><a th:href="@{/admin/bincase(page=1, size=5)}" href="#">首页</a></li>
+										<li th:if="${pageInfo.isHasPreviousPage()}">
+											<a th:href="@{/admin/bincase(page=${pageInfo.getPrePage()}, size=5)}" href="#" aria-label="Previous">
 												<span aria-hidden="true">&laquo;</span>
 											</a>
 										</li>
-										<li><a href="#">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">5</a></li>
-										<li>
-											<a href="#" aria-label="Next">
+										<!--										<li class="active" th:each="npn : ${pageInfo.getNavigatepageNums()}">-->
+										<!--											<a href="#" th:href="@{/admin/my_articles(page=${npn}, size=5)}" th:text="${npn}" th:if="${npn == pageInfo.getPageNum()}">1</a>-->
+										<!--										</li>-->
+										<li th:each="npn : ${pageInfo.getNavigatepageNums()}">
+											<a href="#" th:href="@{/admin/bincase(page=${npn}, size=5)}" th:text="${npn}" th:if="${npn != pageInfo.getPageNum()}">1</a>
+											<span style="font-weight: bold;background: #6faed9;" th:if="${npn == pageInfo.getPageNum()}" th:text="${npn}" ></span>
+										</li>
+										<li th:if="${pageInfo.isHasNextPage()}">
+											<a th:href="@{/admin/bincase(page=${pageInfo.getNextPage()}, size=5)}" href="#" aria-label="Next">
 												<span aria-hidden="true">&raquo;</span>
 											</a>
 										</li>
+										<li><a th:href="@{/admin/bincase(page=${pageInfo.getPages()}, size=5)}" href="#">尾页</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -219,16 +165,11 @@
 				</div>
 				<!-- 中间结束 -->
 
-				<!-- 尾部开始 -->
-				<div class="row">
 
-				</div>
-				<!-- 尾部结束 -->
 			</div>
 		</div>
 		<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
 		<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script th:src="@{/admin/plugins/editor.md/editormd.js}" src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
 
 		<script type="text/javascript">
 			function chevron_toggle() {

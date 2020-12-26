@@ -64,10 +64,10 @@
 							</ul>
 						</li>
 						<li role="presentation"><a href="user-manage.html">用户管理</a></li>
-						<li role="presentation"><a href="class-label.html">分类标签</a></li>
+						<li role="presentation"><a th:href="@{/admin/class_label}" href="class-label.html">分类标签</a></li>
 						<li role="presentation"><a href="comments.html">评论留言</a></li>
-						<li role="presentation"><a href="img-manage.html">图片管理</a></li>
-						<li role="presentation"><a href="attach-manage.html">附件管理</a></li>
+						<li role="presentation"><a th:href="@{/admin/img_manage}" href="img-manage.html">图片管理</a></li>
+						<li role="presentation"><a th:href="@{/admin/attach_manage}" href="attach-manage.html">附件管理</a></li>
 					</ul>
 				</div>
 				<!---->
@@ -75,14 +75,16 @@
 
 				</div>
 				<div class="col-sm-10" id="content-bin23">
-					<form id="blogForm" action="" method="post">
+					<form id="blogForm" onsubmit="return false;">
 						<div class="panel panel-info">
 							<div class="panel-heading">博客信息~</div>
 							<div class="panel-body">
 								<div class="form-group">
 									<div class="input-group">
+										<!--1. 添加一个隐藏的id，方便后端进行操作-->
+										<input type="hidden" id="blogId" name="blogId" th:value="${blogWillBeEdited.getId()}">
 										<div class="input-group-addon">标题</div>
-										<input class="form-control" id="title" name="title" type="text" placeholder="博客标题(必填,30字以内)" maxlength="30" />
+										<input class="form-control" th:value="${blogWillBeEdited.getTitle()}" id="title" name="title" type="text" placeholder="博客标题(必填,30字以内)" maxlength="30" />
 									</div>
 
 								</div>
@@ -104,12 +106,8 @@
 										<div class="form-group">
 											<label for="tagId">标签</label>
 											<select id="tagId" name="tagId" class="select2" multiple="multiple" style="width: 100%;">
-												<option value="1">Java</option>
-												<option value="2">JavScript</option>
-												<option value="3">HTML</option>
-												<option value="4">Spring</option>
-												<option value="5">SpringBoot</option>
-												<option value="6">我的笔记</option>
+												<option th:each="label : ${allLabel}" th:text="${label.getLabelName()}" th:value="${label.getId()}" value="1">Java</option>
+
 											</select>
 										</div>
 										<!-- /.form-group -->
@@ -132,7 +130,7 @@
 							</div>
 						</div>
 						<div id="md-editor">
-							<textarea style="display:none;">**Editor.md** 是一款开源的、可嵌入的 Markdown 在线编辑器（组件），基于 CodeMirror、jQuery 和 Marked 构建。</textarea>
+							<textarea style="display:none;" th:text="${blogWillBeEdited.getContent()}">**Editor.md** 是一款开源的、可嵌入的 Markdown 在线编辑器（组件），基于 CodeMirror、jQuery 和 Marked 构建。</textarea>
 						</div>
 						<input type="hidden" id="isPublish" name="isPublish">
 					</form>
@@ -140,29 +138,24 @@
 			</div>
 			<!-- 中间结束 -->
 
-			<!-- 尾部开始 -->
-			<div class="row">
 
-			</div>
-			<!-- 尾部结束 -->
 		</div>
 		<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
 		<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
-		<script src="plugins/select2/js/select2.js" type="text/javascript" charset="utf-8"></script>
-		<script src="plugins/sweetalert2/sweetalert2.js" type="text/javascript" charset="utf-8"></script>
-		<script src="plugins/dropzone/dropzone.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/main_admin.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/editor.md/editormd.js}" src="plugins/editor.md/editormd.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/select2/js/select2.js}" src="plugins/select2/js/select2.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/sweetalert2/sweetalert2.js}" src="plugins/sweetalert2/sweetalert2.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/dropzone/dropzone.js}" src="plugins/dropzone/dropzone.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/js/edit.js}"  type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/js/uploadimg.js}" src="js/uploadimg.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/highlight/highlight.pack.js}" src="plugins/highlight/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/js/main_admin.js}" src="js/main_admin.js" type="text/javascript" charset="utf-8"></script>
 
 		<script type="text/javascript">
 			function chevron_toggle() {
 				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-up");
 				$("#collapseParent").find("span#slide1").toggleClass("glyphicon-chevron-down");
 			}
-
-			$(function () {
-
-			})
 		</script>
 	</body>
 </html>

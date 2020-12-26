@@ -3,7 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<head>
 		<meta charset="utf-8" />
-		<title>Xshell连接阿里云服务器</title>
+		<title th:text="${blogTitle}"></title>
 		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="css/main.css" />
 
@@ -95,7 +95,7 @@
 
 			<div class="jumbotron jumbotron-bg">
 				<div class="container">
-					<h1>Xshell连接阿里云服务器</h1>
+					<h1 th:text="${blogTitle}"></h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum aspernatur iure harum aperiam corporis nihil
 						cumque minima consectetur corrupti vero consequatur officia fugit iste quasi quisquam alias inventore tempore
 						nisi.</p>
@@ -105,61 +105,11 @@
 
 		<div class="container-fluid bg-content">
 			<div class="container">
-				<div class="col-sm-8">
-					<div class="article-title">
-						Xshell连接阿里云服务器
-					</div>
-					<div class="article-content">
-						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quae ullam fuga ea veritatis nulla
-							maxime voluptatibus eaque ab? Debitis tempora magni cumque blanditiis in maxime laborum iusto reprehenderit
-							nihil.</div>
-						<div>Unde qui neque necessitatibus magni eligendi ducimus esse optio facere sit ullam error expedita nisi earum
-							quae quam placeat quia soluta. Sed qui ratione laboriosam voluptas assumenda architecto distinctio iusto.</div>
-						<div>Ea illum incidunt sunt perspiciatis officiis fugit eveniet eum assumenda recusandae maiores neque molestiae
-							fugiat fuga. Dolorum impedit in beatae aut nemo aliquid illum voluptates enim quae maiores nostrum magnam!</div>
-						<div>Perspiciatis error maiores assumenda reprehenderit expedita dignissimos impedit ipsa alias iste quidem
-							consequatur ab eos praesentium asperiores a est quos consectetur culpa ratione autem fuga delectus velit
-							doloribus pariatur iusto.</div>
-						<div>Nulla libero deserunt itaque et commodi ipsum fuga voluptatem nemo veniam tenetur veritatis quibusdam
-							explicabo sunt deleniti harum repellat quis possimus modi eaque cum unde totam temporibus eos quas nostrum.</div>
-						<div>Itaque error odit mollitia adipisci accusantium voluptas. Dicta qui quo officia molestiae aliquam architecto
-							modi dignissimos. Autem est officiis ex? Rem quasi aperiam quas temporibus explicabo amet eaque. Nam illum.</div>
-						<div>Reiciendis maxime aperiam fuga magnam vero unde eum praesentium. Veritatis qui iure nulla commodi sequi eos
-							praesentium ad dignissimos omnis eum quo aliquam assumenda beatae illo eligendi quia ab unde!</div>
-						<div>Non enim facilis soluta nobis at velit ut fuga suscipit a fugit magni ipsa consequatur itaque eius eligendi
-							est eveniet voluptate eum nam sit laborum quaerat officiis accusamus dolor amet.</div>
-						<div>Iure cum ex exercitationem natus sit nesciunt assumenda error magni autem repudiandae animi consequatur
-							rerum at dicta officiis qui sint sapiente tenetur! Rem ea veniam necessitatibus velit sint sed suscipit.</div>
-						<div>Nisi rem nobis aperiam optio id nesciunt dolores! Eligendi deserunt fugiat fuga mollitia consectetur
-							explicabo minus esse consequuntur nulla earum facere ab animi corporis unde temporibus quis nesciunt quod
-							officia!</div>
-						<div>Odit maiores laborum doloremque distinctio earum veniam odio repudiandae accusamus obcaecati quas quaerat
-							saepe sapiente quisquam magni architecto quidem ab necessitatibus sit. Saepe voluptates itaque architecto.
-							Ducimus quos omnis error!</div>
-						<div>Vero nesciunt voluptatem tempore repudiandae quisquam pariatur doloribus distinctio incidunt. Eum explicabo
-							qui vitae eius maxime voluptas autem officiis at nihil delectus vero consequuntur sapiente modi quos atque
-							provident inventore.</div>
-						<div>Nesciunt saepe et architecto porro dicta sed possimus dolorem corrupti repellendus a pariatur unde omnis
-							commodi facilis praesentium. Ab quasi nihil nam culpa non ducimus iure laudantium asperiores cum accusamus?</div>
-						<div>Reprehenderit nulla unde facilis quae quisquam voluptate magni provident repudiandae ab sapiente aliquid
-							doloremque voluptates dolores omnis itaque? Unde consectetur adipisci sed enim veritatis maxime provident harum
-							odit labore laudantium.</div>
-						<div>Quaerat alias perferendis porro repellendus earum maiores quasi perspiciatis tempora aperiam dignissimos
-							esse labore assumenda blanditiis eaque possimus omnis qui dolores facere enim cum. Labore iusto harum voluptas
-							aliquam dolorum.</div>
-						<div>Vel pariatur doloremque nobis sapiente laudantium velit recusandae cupiditate quod magni necessitatibus
-							numquam nisi nemo eligendi exercitationem ullam repudiandae expedita placeat sequi voluptatum obcaecati hic
-							praesentium nihil maiores error delectus.</div>
-						<div>Nulla reprehenderit modi saepe quod repellat culpa explicabo soluta officiis quisquam eligendi iure nisi
-							nesciunt blanditiis vero quae enim ullam reiciendis repellendus pariatur assumenda tempora tenetur laboriosam.
-							Sint voluptas quaerat.</div>
-						<div>Neque dolores facilis sapiente facere accusamus itaque consequuntur quaerat vitae repellat nisi sunt
-							voluptate eius iure. Eaque adipisci sapiente cum ad eum ab tempore sunt quo officia eveniet? Rem velit.</div>
-						<div>Accusantium vitae amet ipsum saepe neque assumenda odio illo molestiae natus hic iure officiis fuga non
-							consequuntur incidunt fugit facere maxime quidem minima dignissimos animi ad in cumque aperiam illum.</div>
-						<div>Officia est commodi laudantium officiis labore aperiam quos vitae unde nobis facere autem delectus vel
-							assumenda quas voluptate obcaecati facilis qui cupiditate itaque tempora culpa quia fuga hic ad voluptates.</div>
+				<div class="col-sm-12">
+					<div class="article-title" th:text="${blogTitle}">
 
+					</div>
+					<div class="article-content" th:utext="${blogContent}">
 
 					</div>
 					<div class="article-bottom">
@@ -240,78 +190,78 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<!-- 侧栏第一部分 -->
-					<div class="side-bar list-group">
-						<a href="#" class="list-group-item">关于前端</a>
-						<a href="#" class="list-group-item">关于后端</a>
-						<a href="#" class="list-group-item">关于游戏</a>
-						<a href="#" class="list-group-item">关于音乐</a>
-						<a href="#" class="list-group-item">关于电影</a>
-						<a href="#" class="list-group-item">关于程序</a>
-					</div>
-					<!-- 侧栏第二部分 -->
-					<div class="side-bar-hot-article">
-						<div class="hot-title">
-							点击量高的文章
-						</div>
-						<div class="hot-body">
-							<div class="list">
-								<div class="item">
-									<div class="title">
-										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
-									</div>
-									<div class="desc">
-										15k阅读 10k评论
-									</div>
-								</div>
-								<div class="item">
-									<div class="title">
-										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
-									</div>
-									<div class="desc">
-										15k阅读 10k评论
-									</div>
-								</div>
-								<div class="item">
-									<div class="title">
-										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
-									</div>
-									<div class="desc">
-										15k阅读 10k评论
-									</div>
-								</div>
-								<div class="item">
-									<div class="title">
-										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
-									</div>
-									<div class="desc">
-										15k阅读 10k评论
-									</div>
-								</div>
-								<div class="item">
-									<div class="title">
-										<a href="#">爬虫：HttpClient和Jsoup的应用</a>
-									</div>
-									<div class="desc">
-										15k阅读 10k评论
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- 侧栏第三部分 -->
-					<div class="side-bar-label">
-						<div class="label-title">
-							热门标签
-						</div>
-						<div class="label-content">
-							<a class="label label-default label-lg">HTML</a>
-							<a class="label label-default">Java</a>
-							<a class="label label-default">MySQL</a>
-						</div>
-					</div>
-				</div>
+<!--				<div class="col-sm-4">-->
+<!--					&lt;!&ndash; 侧栏第一部分 &ndash;&gt;-->
+<!--					<div class="side-bar list-group">-->
+<!--						<a href="#" class="list-group-item">关于前端</a>-->
+<!--						<a href="#" class="list-group-item">关于后端</a>-->
+<!--						<a href="#" class="list-group-item">关于游戏</a>-->
+<!--						<a href="#" class="list-group-item">关于音乐</a>-->
+<!--						<a href="#" class="list-group-item">关于电影</a>-->
+<!--						<a href="#" class="list-group-item">关于程序</a>-->
+<!--					</div>-->
+<!--					&lt;!&ndash; 侧栏第二部分 &ndash;&gt;-->
+<!--					<div class="side-bar-hot-article">-->
+<!--						<div class="hot-title">-->
+<!--							点击量高的文章-->
+<!--						</div>-->
+<!--						<div class="hot-body">-->
+<!--							<div class="list">-->
+<!--								<div class="item">-->
+<!--									<div class="title">-->
+<!--										<a href="#">爬虫：HttpClient和Jsoup的应用</a>-->
+<!--									</div>-->
+<!--									<div class="desc">-->
+<!--										15k阅读 10k评论-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="item">-->
+<!--									<div class="title">-->
+<!--										<a href="#">爬虫：HttpClient和Jsoup的应用</a>-->
+<!--									</div>-->
+<!--									<div class="desc">-->
+<!--										15k阅读 10k评论-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="item">-->
+<!--									<div class="title">-->
+<!--										<a href="#">爬虫：HttpClient和Jsoup的应用</a>-->
+<!--									</div>-->
+<!--									<div class="desc">-->
+<!--										15k阅读 10k评论-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="item">-->
+<!--									<div class="title">-->
+<!--										<a href="#">爬虫：HttpClient和Jsoup的应用</a>-->
+<!--									</div>-->
+<!--									<div class="desc">-->
+<!--										15k阅读 10k评论-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="item">-->
+<!--									<div class="title">-->
+<!--										<a href="#">爬虫：HttpClient和Jsoup的应用</a>-->
+<!--									</div>-->
+<!--									<div class="desc">-->
+<!--										15k阅读 10k评论-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					&lt;!&ndash; 侧栏第三部分 &ndash;&gt;-->
+<!--					<div class="side-bar-label">-->
+<!--						<div class="label-title">-->
+<!--							热门标签-->
+<!--						</div>-->
+<!--						<div class="label-content">-->
+<!--							<a class="label label-default label-lg">HTML</a>-->
+<!--							<a class="label label-default">Java</a>-->
+<!--							<a class="label label-default">MySQL</a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 			</div>
 		</div>
 		<button id="btn_top" title="回到顶部" class="btn btn-default">
@@ -325,6 +275,15 @@
 		<script th:src="@{/js/bootstrap.js}" src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 		<script th:src="@{/js/umbrella.js}" src="js/umbrella.js" type="text/javascript" charset="utf-8"></script>
 		<script th:src="@{/js/mouseclick.js}" src="js/mouseclick.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/highlight/highlight.pack.js}" src="plugins/highlight/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
 		<script th:src="@{/js/main.js}" src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function () {
+				// 代码高亮
+				$('pre code').each(function (i, block) {
+					hljs.highlightBlock(block);
+				});
+			});
+		</script>
 	</body>
 </html>
