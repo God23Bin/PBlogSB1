@@ -119,20 +119,74 @@ p {
 /* --------------------------开始编写文章部分的样式------------------------- */
 
 .article-title {
-	color: white;
+	color: #ffffff;
 	font-size: 45px;
 }
 
 .article-content {
-	color: white;
+	color: #ffffff;
 	font-size: 15px;
 	padding-left: 40px;
+	padding-right: 40px;
 	margin-top: 16px;
 	margin-bottom: 16px;
+	background-color: #ffffff;
+	border: 3px solid #ffffff;
+	border-radius: 5px;
+	box-shadow: 0 0 90px #000000;
 }
 
+.article-content img {
+	max-width: 100%;
+}
+
+.article-content blockquote {
+	background-color: rgba(24, 31, 52, 0.08);
+}
+
+.article-content p{font-size:15px; line-height:28px; color:#595959;font-family:微软雅黑}
+.article-content pre, code{font-size:14px; font-family: Roboto, 'Courier New', Consolas, Inconsolata, Courier, monospace;}
+.article-content code{margin:0 3px; padding:0 6px; white-space: pre-wrap; background-color:#F8F8F8; border-radius:2px; display: inline;}
+.article-content pre{font-size:15px; line-height:20px;}
+.article-content precode{white-space: pre; overflow:auto; border-radius:3px; padding:5px 10px; display: block !important;}
+.article-content strong, b{color:#BF360C;}
+/*.article-content em, i{color:#009688;}*/
+.article-content em, i{color: #ec781f;}
+/*.article-content big{font-size:22px; color:#009688; font-weight: bold; vertical-align: middle; border-bottom:1px solid #eee;}*/
+.article-content big{font-size:22px; color: #ec781f; font-weight: bold; vertical-align: middle; border-bottom:1px solid #eee;}
+.article-content small{font-size:12px; line-height:22px;}
+.article-content hr{border-bottom:0.05em dotted #eee; margin:10px auto;}
+.article-content p{margin:15px 5px!important;}
+.article-content table, pre, dl, blockquote, q, ul, ol{margin:10px 5px;}
+.article-content ul, ol{padding-left:10px;}
+.article-content li{margin:5px;}
+.article-content lip{margin:5px 0!important;}
+.article-content ulul, ulol, olul, olol{margin:0; padding-left:10px;}
+.article-content olol, ulol{list-style-type: lower-roman;}
+.article-content ululol, ulolol, olulol, ololol{list-style-type: lower-alpha;}
+.article-content dl{padding:0;}
+.article-content dldt{font-size:1em; font-weight: bold; font-style: italic;}
+.article-content dldd{margin:0 0 10px; padding:0 10px;}
+.article-content blockquote, q{border-left:3px solid #009688; padding:0 10px; color:#777; quotes: none;}
+.article-content blockquote::before, blockquote::after, q::before, q::after{content: none;}
+/*.article-content h1, h2, h3, h4, h5, h6{margin:20px 0 10px; padding:0; font-weight: bold; color:#009688;}*/
+.article-content h1, h2, h3, h4, h5, h6{margin:20px 0 10px; padding:0; font-weight: bold; color: #eaaf6a;;}
+.article-content h1{font-size:24px;}
+.article-content h2{font-size:22px;}
+.article-content h3{font-size:18px;}
+.article-content h4{font-size:18px;}
+.article-content h5{font-size:16px;}
+.article-content h6{font-size:16px; color:#777;}
+.article-content table{padding:0; border-collapse: collapse; border-spacing:0; font-size:1em; font: inherit; border:0;}
+.article-content tbody{margin:0; padding:0; border:0;}
+.article-content tabletr{border:0; border-top:1px solid #CCC; background-color: white; margin:0; padding:0;}
+.article-content tabletr:nth-child(2n){background-color:#F8F8F8;}
+.article-content tabletrth, tabletrtd{font-size:16px; border:1px solid #CCC; margin:0; padding:5px 10px;}
+.article-content tabletrth{font-weight: bold; background-color:#F0F0F0;}
+/*.article-content img{display:block;text-align:center;margin:0 auto;}*/
+
 .article-bottom {
-	padding: 10px 0 20px 40px;
+	padding: 10px 0 20px 0px;
 }
 
 .comments-container {
