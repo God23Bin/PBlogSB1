@@ -28,6 +28,34 @@ public interface ArticleService {
     PageInfo<Blog> getAllBlogWithPage(Integer pageNum, Integer pageSize);
 
     /**
+     * 分页查询所有博客，以是否发布来查询，替代上面的
+     * @param isPublish
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    PageInfo<Blog> getAllBlogByIsPublishWithPage(Boolean isPublish, Integer pageNum, Integer pageSize);
+
+    /**
+     * 分页查询所有在垃圾箱中的博客
+     * @param isTrash
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    PageInfo<Blog> getAllBlogByIsTrashWithPage(Boolean isTrash, Integer pageNum, Integer pageSize);
+
+    /**
+     * 分页查询所有博客，是否发布，是否为垃圾
+     * @param isPublish
+     * @param isTrash
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    PageInfo<Blog> getAllBlogByIsPublishAndIsTrashWithPage(Boolean isPublish, Boolean isTrash, Integer pageNum, Integer pageSize);
+
+    /**
      * 根据id获取博客
      * @param id
      * @return
@@ -55,5 +83,11 @@ public interface ArticleService {
      */
     List<Blog> selectBlogListBySort(String sortName);
 
+    /**
+     * 根据博客标题获取博客id
+     * @param title
+     * @return
+     */
+    int getIdByBlogTitle(String title);
 
 }
