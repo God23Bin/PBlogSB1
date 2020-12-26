@@ -1,17 +1,18 @@
 package com.bin23.blog.controller;
 
+import com.bin23.blog.entity.Blog;
 import com.bin23.blog.entity.SysUser;
+import com.bin23.blog.service.article.ArticleService;
 import com.bin23.blog.service.impl.SysUserServiceImpl;
+import com.bin23.blog.utils.MarkDownUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -21,6 +22,9 @@ public class UserController {
 
     @Resource
     private SysUserServiceImpl sysUserService;
+
+    @Resource
+    private ArticleService articleService;
 
     @RequestMapping("/")
     public String showIndex() {
@@ -56,5 +60,14 @@ public class UserController {
         int i = sysUserService.sysUserRegister(sysUser);
         logger.info("注册返回值为1即成功注册：" + i);
         return "index";
+    }
+
+    @GetMapping("/article/details/{blogId}")
+    public String blogDetails(@PathVariable("blogId") Integer blogId, Model model) {
+        Blog blog = articleService.getBlogById(blogId);
+        String blogHtmlContent = MarkDownUtil.mdToHtml(blog.getContent());
+        model.addAttribute("blogTitle", blog.getTitle());
+        model.addAttribute("blogContent", blogHtmlContent);
+        return "articles";
     }
 }
