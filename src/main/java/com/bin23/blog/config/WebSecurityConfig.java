@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin().loginPage("/userLogin").permitAll()
                 .usernameParameter("phone_number")//这个值要跟登陆页面form表单input的name属性的属性值一样
                 .passwordParameter("password")//同样和页面保持一致
-                .successForwardUrl("/")
+                .defaultSuccessUrl("/")
                 .failureUrl("/userLogin?error");
 
         // 自定义用户退出
@@ -55,6 +55,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // 关闭CSRF跨域
         http.csrf().disable();
+
+        // 解决Refused to display in a frame because it set 'X-Frame-Options' to 'DENY'的解决办法
+        // Spring Boot Spring Securty 的 x-frame-options deny
+        // 默认是deny，会让editor.md的图片上传显示不出路径，F12后才发现的，都是这个deny搞的鬼，改成sameOrigin
+        http.headers().frameOptions().sameOrigin();
     }
 
     @Override
