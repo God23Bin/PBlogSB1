@@ -21,4 +21,9 @@ public class Blog {
     private Date updateTime;
     private String blogUrl;
     private String coverUrl;
+    /**
+     * 1. 新增状态属性，是否发布和是否为垃圾
+     */
+    private Boolean isPublish;
+    private Boolean isTrash;
 }
