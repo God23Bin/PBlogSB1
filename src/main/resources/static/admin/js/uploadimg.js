@@ -1,5 +1,5 @@
 function initPasteDragImg(Editor){
-    var doc = document.getElementById(Editor.id)
+    var doc = document.getElementById(Editor.id);
     doc.addEventListener('paste', function (event) {
         var items = (event.clipboardData || window.clipboardData).items;
         var file = null;
