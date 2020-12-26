@@ -22,16 +22,6 @@ li .active {
 	margin-top: 40px;
 }
 
-#side-bar-bin23-setting{
-	height: 100%;
-	position: fixed;
-	background-color: #eaeaea;
-	top: 0;
-	left: 0;
-	overflow-x: hidden;
-	padding-top: 20px;
-	margin-top: 40px;
-}
 
 #content-bin23 {
 	margin-top: 70px;
