@@ -38,6 +38,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("index.html").permitAll()
                 .antMatchers("/toRegisterPage").permitAll()
                 .antMatchers("/userRegister").permitAll()
+                .antMatchers("/zone/**").permitAll()
+                .antMatchers("/about").permitAll()
+                .antMatchers("/article/details/**").permitAll()
+                // 配置上传的映射，否则图片获取不到
+                .antMatchers("/upload/**").permitAll()
                 .antMatchers("/css/**", "/fonts/**", "/img/**", "/js/**").permitAll()//放行静态资源，CSS，JS什么的
                 .anyRequest().authenticated()//表示除了上面的映射地址外，其他的都要登录的
                 .and().formLogin();//formLogin配置了默认的Spring Security登录页面

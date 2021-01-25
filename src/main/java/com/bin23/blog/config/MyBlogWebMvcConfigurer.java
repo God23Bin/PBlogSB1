@@ -10,5 +10,6 @@ public class MyBlogWebMvcConfigurer implements WebMvcConfigurer {
         // addResourceLocations指的是文件放置的目录，addResoureHandler指的是对外暴露的访问路径("file:"是规定写法)
         // 通俗来说，当访问/upload/下的路径时，都会去D:/MyZone/Blog_AboutUpload/找资源
         registry.addResourceHandler("/upload/**").addResourceLocations("file:" + "D:/MyZone/Blog_AboutUpload/");
+        registry.addResourceHandler("/upload/cover/**").addResourceLocations("file:" + "D:/MyZone/Blog_AboutUpload/blog_cover/");
     }
 }
