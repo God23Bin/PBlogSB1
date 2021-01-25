@@ -5,6 +5,7 @@
 		<title>分类标签啦~</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/admin/plugins/bootstrap/css/bootstrap.css}" href="plugins/bootstrap/css/bootstrap.css" />
 		<link rel="stylesheet" th:href="@{/admin/plugins/editor.md/css/editormd.css}" href="plugins/editor.md/css/editormd.css">
+		<link rel="stylesheet" th:href="@{/admin/plugins/sweetalert2/sweetalert2.css}" href="plugins/sweetalert2/sweetalert2.css">
 		<link rel="stylesheet" type="text/css" th:href="@{/admin/css/main_admin.css}" href="css/main_admin.css" />
 	</head>
 	<body>
@@ -21,7 +22,7 @@
 						</div>
 						<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="index.html">博客首页</a></li>
+								<li class="active"><a th:href="@{/}" href="index.html">博客首页</a></li>
 							</ul>
 
 							<ul class="nav navbar-nav navbar-right">
@@ -46,7 +47,7 @@
 				<!--这里overflow了，class="col-sm-2"没效果-->
 				<div class="col-sm-2" id="side-bar-bin23">
 					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation" id="bar-1"><a href="index.html">统计</a></li>
+						<li role="presentation" id="bar-1"><a th:href="@{/admin/}" href="index.html">统计</a></li>
 						<li role="presentation" id="bar-2">
 							<a href="#docCollapse" class="nav-header collapsed collapseParent" data-toggle="collapse" id="collapseParent"
 							 onclick="chevron_toggle()">
@@ -59,9 +60,9 @@
 								<li><a th:href="@{/admin/bincase}" href="bincase.html">垃圾箱</a></li>
 							</ul>
 						</li>
-						<li role="presentation"><a href="user-manage.html">用户管理</a></li>
+						<li role="presentation"><a th:href="@{/admin/user_manage}" href="user-manage.html">用户管理</a></li>
 						<li class="active" role="presentation"><a th:href="@{/admin/class_label}" href="class-label.html">分类标签</a></li>
-						<li role="presentation"><a href="comments.html">评论留言</a></li>
+						<li role="presentation"><a th:href="@{/admin/comments}" href="comments.html">评论留言</a></li>
 						<li role="presentation"><a th:href="@{/admin/img_manage}" href="img-manage.html">图片管理</a></li>
 						<li role="presentation"><a th:href="@{/admin/attach_manage}" href="attach-manage.html">附件管理</a></li>
 					</ul>
@@ -86,7 +87,7 @@
 
 					<div class="row">
 						<div class="col-sm-6">
-							<table class="table table-striped table-hover">
+							<table id="tableSort" class="table table-striped table-hover">
 								<thead>
 									<tr>
 										<th width="15%">id</th>
@@ -94,37 +95,18 @@
 										<th width="30%">操作</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>前端</td>
-										<td>
-											<div class="btn-group">
-												<button class="btn btn-success btn-sm">编辑</button>
-												<button class="btn btn-danger btn-sm">删除</button>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>后端</td>
-										<td>
-											<div class="btn-group">
-												<button class="btn btn-success btn-sm">编辑</button>
-												<button class="btn btn-danger btn-sm">删除</button>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>Spring相关</td>
-										<td>
-											<div class="btn-group">
-												<button class="btn btn-success btn-sm">编辑</button>
-												<button class="btn btn-danger btn-sm">删除</button>
-											</div>
-										</td>
-									</tr>
+								<tbody id="ok">
+									<!--修改成通过Ajax进行获取数据，然后填充-->
+<!--									<tr th:each="sort : ${allSort}">-->
+<!--										<td th:text="${sort.getId()}">1</td>-->
+<!--										<td th:text="${sort.getSortName()}">前端</td>-->
+<!--										<td>-->
+<!--											<div class="btn-group">-->
+<!--												<button class="btn btn-success btn-sm">编辑</button>-->
+<!--												<button class="btn btn-danger btn-sm">删除</button>-->
+<!--											</div>-->
+<!--										</td>-->
+<!--									</tr>-->
 								</tbody>
 							</table>
 						</div>
@@ -138,11 +120,12 @@
 										<div class="form-group">
 											<div class="input-group">
 												<div class="input-group-addon">类别名</div>
-												<input class="form-control" type="text">
+												<input id="input-sort-name" name="sortName" class="form-control" type="text">
 											</div>
 										</div>
 										<div class="form-group">
-											<button class="btn btn-success btn-sm">添加</button>
+											<button id="addSortAjax" class="btn btn-success btn-sm">添加</button>
+											<button id="getPageInfo" class="btn btn-primary">测试</button>
 										</div>
 									</form>
 								</div>
@@ -151,28 +134,30 @@
 						<!--分页---------开始-->
 						<div class="row">
 							<div class="col-sm-8">
-						
-							</div>
-							<div class="col-sm-4">
 								<nav aria-label="Page navigation">
-									<ul class="pagination">
-										<li>
-											<a href="#" aria-label="Previous">
-												<span aria-hidden="true">&laquo;</span>
-											</a>
-										</li>
-										<li><a href="#">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">5</a></li>
-										<li>
-											<a href="#" aria-label="Next">
-												<span aria-hidden="true">&raquo;</span>
-											</a>
-										</li>
+									<ul id="okSortPage" class="pagination">
+										<!--修改成通过Ajax进行分页-->
+<!--										<li><a th:href="@{/admin/class_label(sortPageNum=1, sortPageSize=3, labelPageNum=${labelPageInfo.getPageNum()}, labelPageSize=3)}" href="#">首页</a></li>-->
+<!--										<li th:if="${sortPageInfo.isHasPreviousPage()}">-->
+<!--											<a th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getPrePage()}, sortPageSize=3, labelPageNum=${labelPageInfo.getPageNum()}, labelPageSize=3)}" href="#" aria-label="Previous">-->
+<!--												<span aria-hidden="true">&laquo;</span>-->
+<!--											</a>-->
+<!--										</li>-->
+<!--										<li th:each="npn : ${sortPageInfo.getNavigatepageNums()}">-->
+<!--											<a href="#" th:href="@{/admin/class_label(sortPageNum=${npn}, sortPageSize=3, labelPageNum=${labelPageInfo.getPageNum()}, labelPageSize=3)}" th:text="${npn}" th:if="${npn != sortPageInfo.getPageNum()}">1</a>-->
+<!--											<span style="font-weight: bold;background: #6faed9;" th:if="${npn == sortPageInfo.getPageNum()}" th:text="${npn}" ></span>-->
+<!--										</li>-->
+<!--										<li th:if="${sortPageInfo.isHasNextPage()}">-->
+<!--											<a th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getNextPage()}, sortPageSize=3, labelPageNum=${labelPageInfo.getPageNum()}, labelPageSize=3)}" href="#" aria-label="Next">-->
+<!--												<span aria-hidden="true">&raquo;</span>-->
+<!--											</a>-->
+<!--										</li>-->
+<!--										<li><a th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getPages()}, sortPageSize=3, labelPageNum=${labelPageInfo.getPageNum()}, labelPageSize=3)}" href="#">尾页</a></li>-->
 									</ul>
 								</nav>
+							</div>
+							<div class="col-sm-4">
+
 							</div>
 						</div>
 						<!--分页---------结束-->
@@ -200,37 +185,17 @@
 										<th width="30%">操作</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td><span class="label label-info">Java</span></td>
-										<td>
-											<div class="btn-group">
-												<button class="btn btn-success btn-sm">编辑</button>
-												<button class="btn btn-danger btn-sm">删除</button>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td><span class="label label-info">Java</span></td>
-										<td>
-											<div class="btn-group">
-												<button class="btn btn-success btn-sm">编辑</button>
-												<button class="btn btn-danger btn-sm">删除</button>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td><span class="label label-info">Java</span></td>
-										<td>
-											<div class="btn-group">
-												<button class="btn btn-success btn-sm">编辑</button>
-												<button class="btn btn-danger btn-sm">删除</button>
-											</div>
-										</td>
-									</tr>
+								<tbody id="ok2">
+<!--									<tr th:each="label : ${allLabel}">-->
+<!--										<td th:text="${label.getId()}">1</td>-->
+<!--										<td th:text="${label.getLabelName()}"><span class="label label-info">Java</span></td>-->
+<!--										<td>-->
+<!--											<div class="btn-group">-->
+<!--												<button class="btn btn-success btn-sm">编辑</button>-->
+<!--												<button class="btn btn-danger btn-sm">删除</button>-->
+<!--											</div>-->
+<!--										</td>-->
+<!--									</tr>-->
 								</tbody>
 							</table>
 						</div>
@@ -244,11 +209,11 @@
 										<div class="form-group">
 											<div class="input-group">
 												<div class="input-group-addon">标签名</div>
-												<input class="form-control" type="text">
+												<input id="input-label-name" class="form-control" type="text">
 											</div>
 										</div>
 										<div class="form-group">
-											<button class="btn btn-success btn-sm">添加</button>
+											<button id="addLabelAjax"  class="btn btn-success btn-sm">添加</button>
 										</div>
 									</form>
 								</div>
@@ -257,28 +222,30 @@
 						<!--分页---------开始-->
 						<div class="row">
 							<div class="col-sm-8">
-						
-							</div>
-							<div class="col-sm-4">
-								<nav aria-label="Page navigation">
-									<ul class="pagination">
-										<li>
-											<a href="#" aria-label="Previous">
-												<span aria-hidden="true">&laquo;</span>
-											</a>
-										</li>
-										<li><a href="#">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">5</a></li>
-										<li>
-											<a href="#" aria-label="Next">
-												<span aria-hidden="true">&raquo;</span>
-											</a>
-										</li>
+								<nav id="labelPageInfo" aria-label="Page navigation">
+									<ul id="ok2LabelPage" class="pagination">
+
+<!--										<li><a th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getPageNum()}, sortPageSize=3, labelPageNum=1, labelPageSize=3)}" href="#">首页</a></li>-->
+<!--										<li th:if="${labelPageInfo.isHasPreviousPage()}">-->
+<!--											<a th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getPageNum()}, sortPageSize=3, labelPageNum=${labelPageInfo.getPrePage()}, labelPageSize=3)}" href="#" aria-label="Previous">-->
+<!--												<span aria-hidden="true">&laquo;</span>-->
+<!--											</a>-->
+<!--										</li>-->
+<!--										<li th:each="npn : ${labelPageInfo.getNavigatepageNums()}">-->
+<!--											<a href="#" th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getPageNum()}, sortPageSize=3, labelPageNum=${npn}, labelPageSize=3)}" th:text="${npn}" th:if="${npn != labelPageInfo.getPageNum()}">1</a>-->
+<!--											<span style="font-weight: bold;background: #6faed9;" th:if="${npn == labelPageInfo.getPageNum()}" th:text="${npn}" ></span>-->
+<!--										</li>-->
+<!--										<li th:if="${sortPageInfo.isHasNextPage()}">-->
+<!--											<a th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getPageNum()}, sortPageSize=3, labelPageNum=${labelPageInfo.getNextPage()}, labelPageSize=3)}" href="#" aria-label="Next">-->
+<!--												<span aria-hidden="true">&raquo;</span>-->
+<!--											</a>-->
+<!--										</li>-->
+<!--										<li><a th:href="@{/admin/class_label(sortPageNum=${sortPageInfo.getPageNum()}, sortPageSize=3, labelPageNum=${labelPageInfo.getPages()}, labelPageSize=3)}" href="#">尾页</a></li>-->
 									</ul>
 								</nav>
+							</div>
+							<div class="col-sm-4">
+
 							</div>
 						</div>
 						<!--分页---------结束-->
@@ -299,6 +266,9 @@
 		</div>
 		<script th:src="@{/js/jquery-3.4.1.js}" src="plugins/bootstrap/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
 		<script th:src="@{/js/bootstrap.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/plugins/sweetalert2/sweetalert2.js}" src="plugins/sweetalert2/sweetalert2.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/admin/js/class_label.js}" src="plugins/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+
 
 		<script type="text/javascript">
 			function chevron_toggle() {
