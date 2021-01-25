@@ -4,6 +4,7 @@ import com.bin23.blog.entity.SysUser;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -27,12 +28,29 @@ public interface SysUserMapper {
      * @return
      */
     @Select("SELECT id FROM sys_user WHERE phone_number = #{phoneNumber}")
-    int getIdByPhoneNumber(String phoneNumber);
+    int selectIdByPhoneNumber(String phoneNumber);
 
     /**
      * 查询所有普通用户
      * @return
      */
-    @Select("SELECT * FROM sys_user AS su LEFT JOIN sys_user_role AS sur ON su.id = sur.user_id WHERE sur.role_id = 2")
+    @Select("SELECT id, phone_number, username, password, email, avatar, signature, age, birthday, code_age, register_time, is_ban FROM sys_user AS su LEFT JOIN sys_user_role AS sur ON su.id = sur.user_id WHERE sur.role_id = 2")
     List<SysUser> selectAllSysUser();
+
+    /**
+     * 查询所有封禁/没封禁的普通用户
+     * @return
+     */
+    @Select("SELECT id, phone_number, username, password, email, avatar, signature, age, birthday, code_age, register_time, is_ban FROM sys_user AS su LEFT JOIN sys_user_role AS sur ON su.id = sur.user_id WHERE sur.role_id = 2 AND su.is_ban = #{isBan}")
+    List<SysUser> selectAllSysUserWithBanOrNot(Boolean isBan);
+
+    /**
+     * 封禁/解封用户
+     * @param id
+     * @param isBan
+     * @return
+     */
+    @Update("UPDATE sys_user SET is_ban = #{isBan} WHERE id = #{id}")
+    int updateUserIsBan(Integer id, Boolean isBan);
+
 }

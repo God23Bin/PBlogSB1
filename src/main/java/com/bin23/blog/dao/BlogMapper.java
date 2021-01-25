@@ -52,8 +52,9 @@ public interface BlogMapper {
     /**
      * 修改博客
      * 1. 新增状态，是否发布和是否为垃圾
+     * 2. 修复博客链接Bug，少了个逗号
      */
-    @Update("UPDATE adm_blog SET title = #{title}, content = #{content}, update_time = #{updateTime}, cover_url = #{coverUrl}, is_publish = #{isPublish}, is_trash = #{isTrash} WHERE id = #{id}")
+    @Update("UPDATE adm_blog SET title = #{title}, content = #{content}, update_time = #{updateTime}, blog_url = #{blogUrl}, cover_url = #{coverUrl}, is_publish = #{isPublish}, is_trash = #{isTrash} WHERE id = #{id}")
     int updateBlog(Blog blog);
 
     /**
