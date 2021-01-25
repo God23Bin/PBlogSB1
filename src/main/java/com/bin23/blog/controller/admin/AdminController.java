@@ -1,9 +1,11 @@
 package com.bin23.blog.controller.admin;
 
-import com.bin23.blog.entity.Blog;
-import com.bin23.blog.entity.Label;
-import com.bin23.blog.entity.Sort;
+import com.bin23.blog.entity.*;
+import com.bin23.blog.entity.result.CResultGenerator;
+import com.bin23.blog.entity.result.CommonResult;
+import com.bin23.blog.service.SysUserService;
 import com.bin23.blog.service.article.ArticleService;
+import com.bin23.blog.service.img.ImgService;
 import com.bin23.blog.service.label.LabelService;
 import com.bin23.blog.service.sort.SortService;
 import com.github.pagehelper.PageInfo;
@@ -28,6 +30,10 @@ public class AdminController {
     private static final Boolean NOT_PUBLISH = false;
     private static final Boolean IS_TRASH = true;
     private static final Boolean NOT_TRASH = false;
+    // 2. 增加用户封禁状态
+    private static final Boolean IS_BAN = true;
+    private static final Boolean NOT_BAN = false;
+
 
     @Resource
     private ArticleService articleService;
@@ -38,6 +44,12 @@ public class AdminController {
     @Resource
     private LabelService labelService;
 
+    @Resource
+    private SysUserService userService;
+
+    @Resource
+    private ImgService imgService;
+
     /**
      * 进入后台管理页面
      * @PreAuthorize 用于判断用户是否有指定权限，没有就不能访问
@@ -45,7 +57,18 @@ public class AdminController {
      */
     @RequestMapping("/")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String toAdminPage() {
+    public String toAdminPage(Model model) {
+        // 文章总数
+        int allBlogCount = articleService.getAllBlogCount();
+        // 分类总数
+        int allSortCount = sortService.getAllSortCount();
+        // 标签总数
+        int allLabelCount = labelService.getAllLabelCount();
+        // 评论总数
+
+        model.addAttribute("allBlogCount", allBlogCount);
+        model.addAttribute("allSortCount", allSortCount);
+        model.addAttribute("allLabelCount", allLabelCount);
         return "admin/index";
     }
 
@@ -97,13 +120,33 @@ public class AdminController {
     }
 
     @RequestMapping("/user_manage")
-    public String userManagePage(Model model) {
-
+    public String userManagePage(@RequestParam(value = "page", required = false, defaultValue = PAGE_NUM)int pageNum,
+                                 @RequestParam(value = "size", required = false, defaultValue = PAGE_SIZE)int pageSize,
+                                 Model model) {
+        PageInfo<SysUser> allUserWithPage = userService.getAllUserWithPage(NOT_BAN, pageNum, pageSize);
+        List<SysUser> allSysUser = allUserWithPage.getList();
+        model.addAttribute("allUser", allSysUser);
+        model.addAttribute("pageInfo", allUserWithPage);
         return "admin/user-manage";
     }
 
     @RequestMapping("/class_label")
-    public String classLabelPage() {
+    public String classLabelPage(@RequestParam(value = "sortPageNum", required = false, defaultValue = PAGE_NUM)int sortPageNum,
+                                 @RequestParam(value = "sortPageSize", required = false, defaultValue = "3")int sortPageSize,
+                                 @RequestParam(value = "labelPageNum", required = false, defaultValue = PAGE_NUM)int labelPageNum,
+                                 @RequestParam(value = "labelPageSize", required = false, defaultValue = "3")int labelPageSize,
+                                 Model model) {
+        // 情况1： 第一次进来，首页，显示3条，无参数，全部执行
+        // 情况2:  分类点击下一页，sortPageNum > 1 ，标签还是首页
+        //                                          标签不是首页
+        PageInfo<Sort> allSortWithPage = sortService.getAllSortWithPage(sortPageNum, sortPageSize);
+        List<Sort> allSort = allSortWithPage.getList();
+        PageInfo<Label> allLabelWithPage = labelService.getAllLabelWithPage(labelPageNum, labelPageSize);
+        List<Label> allLabel = allLabelWithPage.getList();
+        model.addAttribute("allSort", allSort);
+        model.addAttribute("allLabel", allLabel);
+        model.addAttribute("sortPageInfo", allSortWithPage);
+        model.addAttribute("labelPageInfo", allLabelWithPage);
         return "admin/class-label";
     }
 
@@ -113,7 +156,13 @@ public class AdminController {
     }
 
     @RequestMapping("/img_manage")
-    public String imgManagePage() {
+    public String imgManagePage(@RequestParam(value = "page", required = false, defaultValue = PAGE_NUM)int pageNum,
+                                @RequestParam(value = "size", required = false, defaultValue = PAGE_SIZE)int pageSize,
+                                Model model) {
+        PageInfo<ImgEntity> allImgWithPage = imgService.getAllImgWithPage(pageNum, pageSize);
+        List<ImgEntity> allImg = allImgWithPage.getList();
+        model.addAttribute("allImg", allImg);
+        model.addAttribute("pageInfo", allImgWithPage);
         return "admin/img-manage";
     }
 

@@ -11,6 +11,7 @@ import com.bin23.blog.service.label.LabelService;
 import com.bin23.blog.service.sort.BlogSortService;
 import com.bin23.blog.service.sort.SortService;
 import com.bin23.blog.utils.MyBlogUtil;
+import com.bin23.blog.utils.UploadUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -54,22 +55,14 @@ public class BlogController {
     @Resource
     private LabelService labelService;
 
-    @PostMapping("/blog/md/upload_img")
+    @PostMapping("/blog/md/upload_file")
     @ResponseBody
     public void uploadFileByEditormd(HttpServletRequest request, HttpServletResponse response,
                                                    @RequestParam(name = "editormd-image-file", required = true) MultipartFile file) throws IOException, URISyntaxException {
         // Editormd前端规定了后台必须返回给前端一个map且形式为{success:"1",message:"上传成功",url:"url"}，这里需要注意一下。
         Map<String,Object> resultMap = new HashMap<String,Object>();
-        // 获取整体文件名，原名称
-        String fileName = file.getOriginalFilename();
-        // 获取后缀名
-        String suffixName = fileName.substring(fileName.lastIndexOf("."));
-        // 生成文件名称通用方法
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        Random r = new Random();
-        StringBuilder tempName = new StringBuilder();
-        tempName.append(sdf.format(new Date())).append(r.nextInt(100)).append(suffixName);
-        String newFileName = tempName.toString();
+        // 生成新的整体文件名
+        String newFileName = UploadUtil.genNewFilename(file);
         //创建文件
         //我自定义的文件保存路径 D:\MyZone\Blog_AboutUpload\
         File destFile = new File("D:/MyZone/Blog_AboutUpload/" + newFileName);
@@ -92,6 +85,37 @@ public class BlogController {
             response.getWriter().write("{\"success\":0}");
         } catch (IOException e) {
             response.getWriter().write("{\"success\":0}");
+        }
+    }
+
+    @RequestMapping("/blog/cover/upload")
+    @ResponseBody
+    public Map<String, Object> uploadFile(HttpServletRequest request, MultipartFile file)
+            throws IOException, URISyntaxException {
+        // 生成新的整体文件名
+        String newFileName = UploadUtil.genNewFilename(file);
+        //创建文件
+        //我自定义的文件保存路径 D:\MyZone\Blog_AboutUpload\
+        File destFile = new File("D:/MyZone/Blog_AboutUpload/blog_cover/" + newFileName);
+        String fileUrl = MyBlogUtil.getHost(new URI(request.getRequestURL() + "")) + "/upload/cover/" + newFileName;
+        File fileDirectory = new File("D:/MyZone/Blog_AboutUpload/blog_cover/");
+        try {
+            if (!fileDirectory.exists()) {
+                if (!fileDirectory.mkdir()) {
+                    throw new IOException("文件夹创建失败,路径为：" + fileDirectory);
+                }
+            }
+            file.transferTo(destFile);
+            // 将新图片名称返回到前端
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("success", "成功啦");
+            map.put("url", fileUrl);
+            return map;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("error", "图片不合法");
+            return map;
         }
     }
 
@@ -143,6 +167,7 @@ public class BlogController {
                                 @RequestParam("blogTitle") String blogTitle,
                                 @RequestParam("blogCategoryId") Integer blogCategoryId,
                                 @RequestParam("blogTagIds[]") List<Integer> blogTagIds,
+                                @RequestParam("blogCoverUrl") String blogCoverUrl,
                                 @RequestParam("blogContent") String blogContent) {
         // 定义时间格式
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日_HHmmss");
@@ -157,6 +182,11 @@ public class BlogController {
             blog.setAuthor(AUTHOR);
             blog.setContent(blogContent);
             blog.setCreateTime(createTime);
+            // 新增封面
+            blog.setCoverUrl(blogCoverUrl);
+            // 设置成 已发布和不是垃圾
+            blog.setIsPublish(IS_PUBLISH);
+            blog.setIsTrash(NOT_TRASH);
             articleService.addBlog(blog);
             // 给博客添加分类
             int blogIdGetByTitle = articleService.getIdByBlogTitle(blogTitle);
@@ -166,9 +196,9 @@ public class BlogController {
             for (int i = 0; i < blogTagIds.size(); i++) {
                 blogLabelService.addBlogLabel(blogIdGetByTitle, blogTagIds.get(i));
             }
-            // 给博客添加链接
-            Blog blogById = articleService.getBlogById(blogId);
-            blogById.setBlogUrl("/article/details/" + blogId);
+            // 给博客添加链接，修改id的错误
+            Blog blogById = articleService.getBlogById(blogIdGetByTitle);
+            blogById.setBlogUrl("article/details/" + blogIdGetByTitle);
             articleService.updateBlog(blogById);
         } else {
             Blog blog = articleService.getBlogById(blogId);
@@ -176,8 +206,11 @@ public class BlogController {
             blog.setAuthor(AUTHOR);
             blog.setContent(blogContent);
             blog.setCreateTime(createTime);
-            // 设置成 IS_PUBLISH
+            // 新增封面
+            blog.setCoverUrl(blogCoverUrl);
+            // 设置成 已发布和不是垃圾
             blog.setIsPublish(IS_PUBLISH);
+            blog.setIsTrash(NOT_TRASH);
             // 给博客添加链接
             blog.setBlogUrl("/article/details/" + blogId);
             // 主要更新下已存在的博客信息，切换状态成IS_PUBLISH
@@ -211,6 +244,7 @@ public class BlogController {
                                  @RequestParam("blogTitle") String blogTitle,
                                  @RequestParam("blogCategoryId") Integer blogCategoryId,
                                  @RequestParam("blogTagIds[]") List<Integer> blogTagIds,
+                                 @RequestParam("blogCoverUrl") String blogCoverUrl,
                                  @RequestParam("blogContent") String blogContent) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日_HHmmss");
         Date createTime = new Date();
@@ -222,7 +256,10 @@ public class BlogController {
             blog.setTitle(blogTitle);
             blog.setContent(blogContent);
             blog.setCreateTime(createTime);
+            // 新增封面
+            blog.setCoverUrl(blogCoverUrl);
             blog.setIsPublish(NOT_PUBLISH);
+            blog.setIsTrash(NOT_TRASH);
             articleService.addBlog(blog);
             // 给博客添加分类
             int blogIdGetByTitle = articleService.getIdByBlogTitle(blogTitle);
@@ -237,6 +274,8 @@ public class BlogController {
             Blog blog = articleService.getBlogById(blogId);
             blog.setTitle(blogTitle);
             blog.setContent(blogContent);
+            // 新增封面
+            blog.setCoverUrl(blogCoverUrl);
             blog.setUpdateTime(createTime);
             articleService.updateBlog(blog);
             // 给博客修改分类
