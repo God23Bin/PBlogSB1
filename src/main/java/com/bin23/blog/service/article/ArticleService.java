@@ -90,4 +90,10 @@ public interface ArticleService {
      */
     int getIdByBlogTitle(String title);
 
+    /**
+     * 获取博客的总数量
+     * @return
+     */
+    int getAllBlogCount();
+
 }

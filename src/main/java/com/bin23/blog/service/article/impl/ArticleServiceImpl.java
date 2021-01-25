@@ -121,4 +121,9 @@ public class ArticleServiceImpl implements ArticleService {
     public int getIdByBlogTitle(String title) {
         return blogMapper.selectIdByBlogTitle(title);
     }
+
+    @Override
+    public int getAllBlogCount() {
+        return getAllBlog().size();
+    }
 }
